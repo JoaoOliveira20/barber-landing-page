@@ -6,7 +6,7 @@ O projeto simula a presença digital de uma barbearia premium, apresentando serv
 
 ## Preview
 
-> Em breve: adicionar link do projeto publicado na Vercel.
+> https://barber-landing-page-rosy.vercel.app/
 
 ## Objetivo
 
