@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090908;
+  --surface: #151411;
+  --surface-elevated: #1d1b17;
+  --foreground: #f5f0e6;
+  --muted: #aaa294;
+  --subtle: #898276;
+  --border: #302d27;
+  --accent: #c8943f;
+  --accent-strong: #e0b45d;
+  --accent-foreground: #171006;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgb(200 148 63 / 12%),
+      transparent 30rem
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 600ms ease-out both;
+}
+
+.whatsapp-cta {
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.whatsapp-cta:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 14px 38px rgb(200 148 63 / 22%);
+}
+
+.whatsapp-cta:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-enter {
+    animation: none;
+  }
+
+  .whatsapp-cta {
+    transition: none;
+  }
+
+  .whatsapp-cta:hover,
+  .whatsapp-cta:active {
+    transform: none;
+  }
+}
