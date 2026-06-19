@@ -2,7 +2,11 @@
 
 Landing page one-page para a barbearia fictícia **Prime Barber**, desenvolvida com foco em apresentação comercial, responsividade, performance e conversão por WhatsApp.
 
-O projeto simula a presença digital de uma barbearia premium, apresentando serviços, diferenciais, depoimentos, galeria, localização e horários de funcionamento em uma interface moderna e acessível.
+O projeto simula a presença digital de uma barbearia premium, apresentando serviços, diferenciais, depoimentos, galeria, localização e horários de funcionamento em uma interface moderna, elegante e acessível.
+
+## Preview
+
+> Em breve: adicionar link do projeto publicado na Vercel.
 
 ## Objetivo
 
@@ -27,12 +31,12 @@ A proposta principal da página é incentivar o visitante a entrar em contato pe
 * Seção de diferenciais da barbearia
 * Seção de experiência do cliente
 * Depoimentos com avaliações fictícias de cinco estrelas
-* Galeria visual sem dependência de imagens externas
+* Galeria visual com imagens otimizadas
 * Localização com mapa incorporado
 * Horários de funcionamento
 * Footer com navegação rápida e redes sociais
 * Metadata básica para SEO
-* Estrutura de conteúdo centralizada em arquivos de configuração
+* Conteúdo centralizado em arquivos de configuração
 
 ## Como executar localmente
 
@@ -48,7 +52,7 @@ Antes de começar, você precisa ter instalado:
 Clone o repositório:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/JoaoOliveira20/barber-landing-page.git
 ```
 
 Acesse a pasta do projeto:
@@ -77,31 +81,41 @@ http://localhost:3000
 
 ## Scripts disponíveis
 
+Executa o projeto em ambiente de desenvolvimento:
+
 ```bash
 npm run dev
 ```
 
-Executa o projeto em ambiente de desenvolvimento.
+Gera a versão de produção:
 
 ```bash
 npm run build
 ```
 
-Gera a versão de produção do projeto.
+Executa a versão de produção após o build:
 
 ```bash
 npm run start
 ```
 
-Executa a versão de produção após o build.
+Executa a verificação de lint:
 
 ```bash
 npm run lint
 ```
 
-Executa a verificação de lint do projeto.
+Corrige problemas de lint automaticamente quando possível:
 
-> Observação: caso exista um script de typecheck no `package.json`, ele também pode ser usado para validar os tipos TypeScript.
+```bash
+npm run lint:fix
+```
+
+Valida os tipos TypeScript:
+
+```bash
+npm run typecheck
+```
 
 ## Personalização
 
@@ -185,13 +199,14 @@ Os nomes, depoimentos, preços, contatos, endereços e demais informações exib
 
 ## Melhorias futuras
 
-* Substituir os placeholders da galeria por imagens autorais otimizadas
+* Publicar o projeto na Vercel
+* Adicionar link de demonstração online no README
 * Adicionar imagem Open Graph para compartilhamento em redes sociais
-* Melhorar animações e microinterações sem comprometer a performance
+* Melhorar microinterações sem comprometer a performance
 * Adicionar testes automatizados de acessibilidade
 * Integrar métricas de acesso e conversão respeitando privacidade e consentimento
 * Conectar o agendamento a um serviço externo caso o projeto evolua para uso real
 
 ## Autor
 
-Desenvolvido por João Pedro como projeto de estudo e portfólio.
+Desenvolvido por **João Pedro** como projeto de estudo e portfólio.
