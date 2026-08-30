@@ -7,7 +7,7 @@ import {
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-9 z-40 mt-9 border-b border-foreground/10 bg-background/85 backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between gap-3 sm:h-18 sm:gap-4">
         <a
           href="#inicio"

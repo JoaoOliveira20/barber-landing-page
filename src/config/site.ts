@@ -16,6 +16,14 @@ export const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComp
   whatsappMessage,
 )}`;
 
+const demoWhatsappNumber = "SEU_NUMERO";
+const demoWhatsappMessage =
+  "Olá João, vi o site demonstrativo da barbearia e queria um orçamento";
+
+export const demoWhatsappUrl = `https://wa.me/${demoWhatsappNumber}?text=${encodeURIComponent(
+  demoWhatsappMessage,
+)}`;
+
 export type NavigationLink = Readonly<{
   label: string;
   href: `#${string}`;

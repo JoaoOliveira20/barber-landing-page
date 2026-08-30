@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { LocationSection } from "@/components/sections/location-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { DemoBar } from "@/components/ui/demo-bar";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 
 export default function Home() {
@@ -14,11 +15,12 @@ export default function Home() {
     <>
       <a
         href="#conteudo-principal"
-        className="fixed top-3 left-3 z-[60] -translate-y-20 bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition-transform focus:translate-y-0"
+        className="fixed top-12 left-3 z-[60] -translate-y-20 bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition-transform focus:translate-y-0"
       >
         Pular para o conteúdo
       </a>
 
+      <DemoBar />
       <SiteHeader />
 
       <main id="conteudo-principal" className="page-enter">
