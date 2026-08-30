@@ -37,11 +37,11 @@ export function GallerySection() {
 
         <p className="mt-3 max-w-xl text-sm text-muted">{galleryNote}</p>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+        <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
           {galleryItems.map((item) => (
             <article
               key={item.image.src}
-              className="relative isolate aspect-[4/3] overflow-hidden border border-foreground/10 last:col-span-2"
+              className="relative isolate aspect-[4/3] grow basis-[280px] overflow-hidden border border-foreground/10"
             >
               <GalleryPhoto item={item} />
             </article>
