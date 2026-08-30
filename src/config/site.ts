@@ -31,7 +31,7 @@ export const pageLinks = {
     href: "#servicos",
   },
   differentials: {
-    label: "Diferenciais",
+    label: "Por que voltar",
     href: "#diferenciais",
   },
   barbers: {
@@ -43,7 +43,7 @@ export const pageLinks = {
     href: "#depoimentos",
   },
   gallery: {
-    label: "Galeria",
+    label: "A barbearia",
     href: "#galeria",
   },
   location: {

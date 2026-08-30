@@ -18,15 +18,15 @@ export function ServicesSection() {
           </h2>
         </div>
 
-        <div className="mt-8 border border-accent/35 bg-background sm:mt-10">
-          <ul className="divide-y divide-accent/15">
+        <div className="mt-8 border-2 border-accent/70 bg-surface-sunken shadow-[0_24px_60px_rgba(0,0,0,0.4)] sm:mt-10">
+          <ul className="divide-y divide-accent/20">
             {services.map((service) => (
               <li
                 key={service.name}
-                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-5 py-4 sm:flex-nowrap sm:gap-x-5 sm:px-8 sm:py-5"
+                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-6 py-5 sm:flex-nowrap sm:gap-x-6 sm:px-10 sm:py-6"
               >
                 <div className="flex min-w-0 flex-1 items-baseline gap-3">
-                  <span className="font-display text-lg whitespace-nowrap text-foreground uppercase sm:text-xl">
+                  <span className="font-bold whitespace-nowrap text-foreground uppercase sm:text-lg">
                     {service.name}
                   </span>
                   <span
@@ -38,7 +38,7 @@ export function ServicesSection() {
                   </span>
                 </div>
 
-                <span className="font-display text-xl whitespace-nowrap text-accent sm:text-2xl">
+                <span className="text-xl font-bold whitespace-nowrap text-accent sm:text-2xl">
                   {service.price}
                 </span>
               </li>
@@ -46,7 +46,7 @@ export function ServicesSection() {
           </ul>
         </div>
 
-        <p className="mt-6 text-sm font-semibold text-accent-strong">
+        <p className="mt-6 text-sm font-semibold text-foreground">
           {servicesNote}
         </p>
       </Container>

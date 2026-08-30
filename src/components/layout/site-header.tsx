@@ -16,11 +16,11 @@ export function SiteHeader() {
         >
           <span
             aria-hidden="true"
-            className="grid size-9 place-items-center border border-accent/60 font-display text-sm text-accent-strong uppercase transition-colors group-hover:border-accent-strong"
+            className="grid size-9 place-items-center border border-accent/60 text-sm font-bold text-accent-strong uppercase transition-colors group-hover:border-accent-strong"
           >
             {siteConfig.initials}
           </span>
-          <span className="hidden font-display text-lg tracking-wide text-foreground uppercase sm:inline sm:text-xl">
+          <span className="hidden text-lg font-bold tracking-wide text-foreground uppercase sm:inline sm:text-xl">
             {siteConfig.name}
           </span>
         </a>

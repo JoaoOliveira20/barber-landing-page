@@ -9,8 +9,8 @@ export function HeroSection() {
       aria-labelledby="hero-title"
       className="relative isolate overflow-hidden"
     >
-      <Container className="py-12 sm:py-14 lg:py-16">
-        <div className="max-w-2xl">
+      <Container className="py-10 sm:py-12 lg:py-14">
+        <div className="max-w-xl">
           <h1
             id="hero-title"
             className="font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.08] text-foreground uppercase"
@@ -18,7 +18,7 @@ export function HeroSection() {
             {heroContent.title}
           </h1>
 
-          <p className="mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+          <p className="mt-6 text-base leading-7 text-muted sm:text-lg sm:leading-8">
             {heroContent.subtitle}
           </p>
 

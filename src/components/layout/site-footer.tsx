@@ -19,11 +19,11 @@ export function SiteFooter() {
           >
             <span
               aria-hidden="true"
-              className="grid size-10 place-items-center border border-accent/60 font-display text-sm text-accent-strong uppercase"
+              className="grid size-10 place-items-center border border-accent/60 text-sm font-bold text-accent-strong uppercase"
             >
               {siteConfig.initials}
             </span>
-            <span className="font-display text-xl tracking-wide text-foreground uppercase">
+            <span className="text-xl font-bold tracking-wide text-foreground uppercase">
               {siteConfig.name}
             </span>
           </a>

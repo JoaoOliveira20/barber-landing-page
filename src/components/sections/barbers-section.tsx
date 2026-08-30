@@ -11,7 +11,7 @@ export function BarbersSection() {
       <Container>
         <h2
           id="barbers-title"
-          className="mx-auto max-w-md text-center font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
+          className="max-w-2xl font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
         >
           Quem vai te atender
         </h2>
@@ -23,11 +23,11 @@ export function BarbersSection() {
               className="border border-foreground/10 bg-surface p-6 sm:p-7"
             >
               <div className="flex items-baseline gap-3">
-                <h3 className="font-display text-2xl text-foreground uppercase">
+                <h3 className="text-2xl font-bold text-foreground uppercase">
                   {barber.name}
                 </h3>
                 {barber.role ? (
-                  <span className="text-xs font-bold tracking-[0.18em] text-accent-strong uppercase">
+                  <span className="bg-background px-2 py-0.5 text-xs font-bold tracking-[0.18em] text-accent-strong uppercase">
                     {barber.role}
                   </span>
                 ) : null}

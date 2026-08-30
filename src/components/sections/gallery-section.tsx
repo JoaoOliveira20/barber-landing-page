@@ -41,7 +41,7 @@ export function GallerySection() {
           {galleryItems.map((item) => (
             <article
               key={item.image.src}
-              className="relative isolate aspect-[4/3] overflow-hidden border border-foreground/10"
+              className="relative isolate aspect-[4/3] overflow-hidden border border-foreground/10 last:col-span-2"
             >
               <GalleryPhoto item={item} />
             </article>

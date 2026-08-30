@@ -80,7 +80,7 @@ export function DifferentialsSection() {
                 <FeatureIcon name={differential.icon} />
               </div>
 
-              <h3 className="mt-6 font-display text-xl text-foreground uppercase">
+              <h3 className="mt-6 text-lg font-bold text-foreground uppercase">
                 {differential.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted">

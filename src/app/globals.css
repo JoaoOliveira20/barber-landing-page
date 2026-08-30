@@ -4,9 +4,10 @@
   --background: #3a2a21;
   --surface: #564840;
   --surface-elevated: #6d615b;
+  --surface-sunken: #2e2019;
   --foreground: #efe7d8;
-  --muted: #a09c92;
-  --subtle: #99958a;
+  --muted: #c2c0b9;
+  --subtle: #bdbbb3;
   --border: #4a3b33;
   --accent: #c08a2e;
   --accent-strong: #d9a347;
@@ -17,6 +18,7 @@
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sunken: var(--surface-sunken);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-subtle: var(--subtle);
