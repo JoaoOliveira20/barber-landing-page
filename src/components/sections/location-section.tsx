@@ -34,7 +34,7 @@ export function LocationSection() {
               id="location-title"
               className="mt-4 font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl xl:text-5xl"
             >
-              Seu próximo horário começa aqui.
+              Onde ficamos
             </h2>
 
             <address className="mt-7 not-italic">

@@ -63,18 +63,14 @@ export function DifferentialsSection() {
       <Container className="grid gap-10 sm:gap-12 xl:grid-cols-[0.72fr_1.28fr] xl:gap-16">
         <div className="xl:pt-4">
           <p className="text-xs font-bold tracking-[0.24em] text-accent-strong uppercase">
-            Por que nos escolher?
+            Diferenciais
           </p>
           <h2
             id="differentials-title"
             className="mt-4 max-w-lg font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
           >
-            Uma pausa na rotina feita do seu jeito.
+            Por que os clientes voltam
           </h2>
-          <p className="mt-6 max-w-lg text-base leading-7 text-muted">
-            Da recepção ao acabamento, cada escolha foi pensada para oferecer
-            conveniência, conforto e um atendimento genuinamente cuidadoso.
-          </p>
 
           <div
             aria-hidden="true"
@@ -82,7 +78,7 @@ export function DifferentialsSection() {
           />
         </div>
 
-        <ul className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">
+        <ul className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-3">
           {differentials.map((differential) => (
             <li
               key={differential.title}

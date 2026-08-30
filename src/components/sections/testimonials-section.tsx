@@ -18,7 +18,7 @@ export function TestimonialsSection() {
               id="testimonials-title"
               className="mt-4 max-w-2xl font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
             >
-              Confiança construída em cada atendimento.
+              O que dizem
             </h2>
           </div>
 

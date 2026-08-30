@@ -111,13 +111,13 @@ export function GallerySection() {
               id="gallery-title"
               className="mt-4 max-w-2xl font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
             >
-              O cuidado aparece em cada detalhe.
+              A barbearia
             </h2>
           </div>
 
           <p className="max-w-md text-base leading-7 text-muted lg:text-right">
-            Uma prévia visual dos cortes, do ambiente e do atendimento que
-            definem a experiência Prime Barber.
+            Uma prévia visual dos cortes, do ambiente e do atendimento da
+            barbearia.
           </p>
         </div>
 

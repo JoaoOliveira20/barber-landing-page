@@ -34,9 +34,9 @@ export const pageLinks = {
     label: "Diferenciais",
     href: "#diferenciais",
   },
-  experience: {
-    label: "Experiência",
-    href: "#experiencia",
+  barbers: {
+    label: "Barbeiros",
+    href: "#barbeiros",
   },
   testimonials: {
     label: "Depoimentos",
@@ -47,14 +47,14 @@ export const pageLinks = {
     href: "#galeria",
   },
   location: {
-    label: "Localização",
+    label: "Onde ficamos",
     href: "#localizacao",
   },
 } as const satisfies Record<string, NavigationLink>;
 
 export const navigationLinks = [
   pageLinks.services,
-  pageLinks.differentials,
+  pageLinks.barbers,
   pageLinks.testimonials,
   pageLinks.location,
 ] as const satisfies readonly NavigationLink[];
@@ -62,7 +62,8 @@ export const navigationLinks = [
 export const footerLinks = [
   pageLinks.home,
   pageLinks.services,
-  pageLinks.experience,
+  pageLinks.differentials,
+  pageLinks.barbers,
   pageLinks.testimonials,
   pageLinks.gallery,
   pageLinks.location,

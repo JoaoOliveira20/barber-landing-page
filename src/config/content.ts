@@ -89,35 +89,6 @@ export const differentials = [
   },
 ] as const satisfies readonly Differential[];
 
-export type ExperienceHighlight = Readonly<{
-  title: string;
-  description: string;
-}>;
-
-export const experienceContent = {
-  eyebrow: "Experiência Prime",
-  title: "Mais que um corte, uma experiência.",
-  description:
-    "Um atendimento feito sem pressa, em um espaço onde técnica, conforto e atenção aos detalhes trabalham juntos para renovar sua confiança.",
-  highlights: [
-    {
-      title: "Ambiente pensado para você relaxar.",
-      description:
-        "Boa música, atendimento atencioso e uma atmosfera confortável do início ao fim.",
-    },
-    {
-      title: "Visual alinhado para qualquer ocasião.",
-      description:
-        "Do dia a dia aos momentos importantes, entregamos um resultado que combina com você.",
-    },
-    {
-      title: "Seu tempo tratado com respeito.",
-      description:
-        "Horário reservado e uma experiência organizada para você aproveitar cada minuto.",
-    },
-  ] satisfies readonly ExperienceHighlight[],
-} as const;
-
 export type Barber = Readonly<{
   name: string;
   role: string | null;

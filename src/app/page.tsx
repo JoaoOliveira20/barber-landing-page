@@ -1,7 +1,7 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { BarbersSection } from "@/components/sections/barbers-section";
 import { DifferentialsSection } from "@/components/sections/differentials-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
 import { GallerySection } from "@/components/sections/gallery-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { LocationSection } from "@/components/sections/location-section";
@@ -25,7 +25,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <DifferentialsSection />
-        <ExperienceSection />
+        <BarbersSection />
         <TestimonialsSection />
         <GallerySection />
         <LocationSection />

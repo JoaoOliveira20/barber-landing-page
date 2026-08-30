@@ -14,16 +14,16 @@ export function HeroSection() {
         className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(circle_at_top,rgba(200,148,63,0.16),transparent_65%)]"
       />
 
-      <Container className="grid items-center gap-10 py-12 sm:gap-14 sm:py-16 lg:py-20">
-        <div className="max-w-3xl">
+      <Container className="py-12 sm:py-14 lg:py-16">
+        <div className="max-w-2xl">
           <h1
             id="hero-title"
-            className="font-display text-[clamp(2.625rem,6.5vw,6.75rem)] leading-[0.94] font-semibold tracking-[-0.045em] text-foreground sm:leading-[0.92]"
+            className="font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-foreground"
           >
             {heroContent.title}
           </h1>
 
-          <p className="mt-7 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
             {heroContent.subtitle}
           </p>
 
