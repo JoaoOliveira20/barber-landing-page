@@ -11,7 +11,7 @@ export function BarbersSection() {
       <Container>
         <h2
           id="barbers-title"
-          className="max-w-2xl font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+          className="mx-auto max-w-md text-center font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
         >
           Quem vai te atender
         </h2>

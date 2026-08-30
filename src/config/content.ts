@@ -135,51 +135,32 @@ export const testimonials = [
 ] as const satisfies readonly Testimonial[];
 
 export type GalleryItem = Readonly<{
-  title: string;
-  category: string;
-  description: string;
-  visual: "cut" | "beard" | "space" | "service" | "finish";
   layout: "featured" | "standard" | "wide";
   image: Readonly<{
     src: `/images/${string}`;
     alt: string;
     objectPosition?: string;
-  }> | null;
+  }>;
 }>;
 
 export const galleryItems: readonly GalleryItem[] = [
   {
-    title: "Cortes com identidade",
-    category: "Corte masculino",
-    description:
-      "Técnica e leitura de estilo para um resultado que combina com cada cliente.",
-    visual: "cut",
     layout: "featured",
     image: {
       src: "/images/barber-cut.webp",
-      alt: "Barbeiro realizando um corte masculino em uma barbearia premium",
+      alt: "Barbeiro realizando um corte masculino na barbearia",
       objectPosition: "64% center",
     },
   },
   {
-    title: "Ambiente premium",
-    category: "Nosso espaço",
-    description:
-      "Conforto, personalidade e uma atmosfera criada para desacelerar.",
-    visual: "space",
     layout: "standard",
     image: {
       src: "/images/barber-shop.webp",
-      alt: "Interior elegante da barbearia com espelhos iluminados e poltronas",
+      alt: "Interior da barbearia com espelhos e poltronas",
       objectPosition: "center",
     },
   },
   {
-    title: "Atendimento cuidadoso",
-    category: "Experiência",
-    description:
-      "Atenção exclusiva e tempo reservado para cuidar de cada detalhe.",
-    visual: "service",
     layout: "standard",
     image: {
       src: "/images/barber-service.webp",
@@ -188,11 +169,6 @@ export const galleryItems: readonly GalleryItem[] = [
     },
   },
   {
-    title: "Barba bem desenhada",
-    category: "Barba",
-    description:
-      "Contornos precisos e acabamento pensado para valorizar o rosto.",
-    visual: "beard",
     layout: "standard",
     image: {
       src: "/images/beard.webp",
@@ -201,11 +177,6 @@ export const galleryItems: readonly GalleryItem[] = [
     },
   },
   {
-    title: "Acabamento impecável",
-    category: "Detalhes",
-    description:
-      "O toque final que transforma um bom visual em uma presença marcante.",
-    visual: "finish",
     layout: "wide",
     image: {
       src: "/images/barber-finish.webp",

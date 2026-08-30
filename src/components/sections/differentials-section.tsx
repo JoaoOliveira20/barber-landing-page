@@ -62,12 +62,9 @@ export function DifferentialsSection() {
 
       <Container className="grid gap-10 sm:gap-12 xl:grid-cols-[0.72fr_1.28fr] xl:gap-16">
         <div className="xl:pt-4">
-          <p className="text-xs font-bold tracking-[0.24em] text-accent-strong uppercase">
-            Diferenciais
-          </p>
           <h2
             id="differentials-title"
-            className="mt-4 max-w-lg font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+            className="max-w-lg font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
           >
             Por que os clientes voltam
           </h2>

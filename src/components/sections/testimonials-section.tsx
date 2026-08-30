@@ -6,45 +6,24 @@ export function TestimonialsSection() {
     <section
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="overflow-hidden pt-14 pb-20 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28"
     >
       <Container>
-        <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <p className="text-xs font-bold tracking-[0.24em] text-accent-strong uppercase">
-              Quem conhece, recomenda
-            </p>
-            <h2
-              id="testimonials-title"
-              className="mt-4 max-w-2xl font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
-            >
-              O que dizem
-            </h2>
-          </div>
-
-          <p className="max-w-md text-base leading-7 text-muted lg:text-right">
-            Relatos de quem encontrou atendimento pontual, cuidado nos detalhes
-            e um resultado que inspira confiança.
-          </p>
-        </div>
+        <h2
+          id="testimonials-title"
+          className="max-w-2xl font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+        >
+          O que dizem
+        </h2>
 
         <ul className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 [scrollbar-width:none] sm:-mx-6 sm:mt-10 sm:px-6 lg:mx-0 lg:grid lg:grid-cols-3 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 [&::-webkit-scrollbar]:hidden">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <li
               key={testimonial.name}
               className="min-w-[88%] snap-center sm:min-w-[58%] lg:min-w-0"
             >
               <figure className="flex h-full min-h-72 flex-col border border-white/10 bg-surface p-6 shadow-[0_18px_55px_rgba(0,0,0,0.18)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_65px_rgba(0,0,0,0.28)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-80 sm:p-8">
-                <div className="flex items-center justify-end gap-4">
-                  <span
-                    aria-hidden="true"
-                    className="font-display text-sm text-accent/70"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
-                <blockquote className="mt-8">
+                <blockquote>
                   <p className="font-display text-lg leading-7 text-foreground sm:text-2xl sm:leading-9">
                     “{testimonial.quote}”
                   </p>

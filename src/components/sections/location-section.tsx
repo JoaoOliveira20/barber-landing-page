@@ -27,12 +27,9 @@ export function LocationSection() {
           </div>
 
           <div className="p-6 sm:p-10 xl:p-12">
-            <p className="text-xs font-bold tracking-[0.24em] text-accent-strong uppercase">
-              Localização e horários
-            </p>
             <h2
               id="location-title"
-              className="mt-4 font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl xl:text-5xl"
+              className="font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl xl:text-5xl"
             >
               Onde ficamos
             </h2>

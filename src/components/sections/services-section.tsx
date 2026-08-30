@@ -19,16 +19,12 @@ export function ServicesSection() {
         </div>
 
         <div className="mt-8 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <article
               key={service.name}
               className="group relative flex flex-col bg-surface p-6 transition-colors duration-300 hover:bg-surface-elevated motion-reduce:transition-none sm:p-7"
             >
-              <span className="font-display text-sm text-accent">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-
-              <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">
+              <h3 className="font-display text-2xl font-semibold text-foreground">
                 {service.name}
               </h3>
 
