@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import type { GalleryItem } from "@/config/content";
 
 import { Container } from "@/components/layout/container";
 import { galleryItems, galleryNote } from "@/config/content";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 type GalleryPhotoProps = Readonly<{
   item: GalleryItem;
@@ -20,7 +23,28 @@ function GalleryPhoto({ item }: GalleryPhotoProps) {
   );
 }
 
+type GalleryTileProps = Readonly<{
+  item: GalleryItem;
+  delayMs: number;
+}>;
+
+function GalleryTile({ item, delayMs }: GalleryTileProps) {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLElement>();
+
+  return (
+    <article
+      ref={elementRef}
+      className={`scroll-reveal relative isolate aspect-[4/3] grow basis-[280px] overflow-hidden border border-foreground/10 ${hasBeenRevealed ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${delayMs}ms` }}
+    >
+      <GalleryPhoto item={item} />
+    </article>
+  );
+}
+
 export function GallerySection() {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLDivElement>();
+
   return (
     <section
       id="galeria"
@@ -28,23 +52,27 @@ export function GallerySection() {
       className="border-t border-foreground/8 bg-surface py-16 sm:py-20 lg:py-24"
     >
       <Container>
-        <h2
-          id="gallery-title"
-          className="max-w-2xl font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
+        <div
+          ref={elementRef}
+          className={`scroll-reveal ${hasBeenRevealed ? "is-visible" : ""}`}
         >
-          A barbearia
-        </h2>
+          <h2
+            id="gallery-title"
+            className="max-w-2xl font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
+          >
+            A barbearia
+          </h2>
 
-        <p className="mt-3 max-w-xl text-sm text-muted">{galleryNote}</p>
+          <p className="mt-3 max-w-xl text-sm text-muted">{galleryNote}</p>
+        </div>
 
         <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
-          {galleryItems.map((item) => (
-            <article
+          {galleryItems.map((item, index) => (
+            <GalleryTile
               key={item.image.src}
-              className="relative isolate aspect-[4/3] grow basis-[280px] overflow-hidden border border-foreground/10"
-            >
-              <GalleryPhoto item={item} />
-            </article>
+              item={item}
+              delayMs={index * 60}
+            />
           ))}
         </div>
       </Container>

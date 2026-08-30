@@ -96,6 +96,19 @@ button {
   transform: translateY(0);
 }
 
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 400ms ease-out,
+    transform 400ms ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -111,6 +124,19 @@ button {
 
   .whatsapp-cta:hover,
   .whatsapp-cta:active {
+    transform: none;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (scripting: none) {
+  .scroll-reveal {
+    opacity: 1;
     transform: none;
   }
 }

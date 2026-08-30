@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "@/components/layout/container";
 import {
   address,
@@ -5,8 +7,11 @@ import {
   siteConfig,
   whatsappUrl,
 } from "@/config/site";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export function LocationSection() {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLDivElement>();
+
   return (
     <section
       id="localizacao"
@@ -14,7 +19,10 @@ export function LocationSection() {
       className="py-16 sm:py-20 lg:py-24"
     >
       <Container>
-        <div className="grid overflow-hidden border border-foreground/10 bg-surface shadow-[0_28px_90px_rgba(0,0,0,0.3)] xl:grid-cols-[1.18fr_0.82fr]">
+        <div
+          ref={elementRef}
+          className={`scroll-reveal grid overflow-hidden border border-foreground/10 bg-surface shadow-[0_28px_90px_rgba(0,0,0,0.3)] xl:grid-cols-[1.18fr_0.82fr] ${hasBeenRevealed ? "is-visible" : ""}`}
+        >
           <div className="relative min-h-72 bg-surface-elevated sm:min-h-96 xl:min-h-[42rem]">
             <iframe
               src={address.mapsEmbedUrl}

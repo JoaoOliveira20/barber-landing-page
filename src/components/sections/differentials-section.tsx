@@ -1,8 +1,11 @@
-import type { DifferentialIcon } from "@/config/content";
+"use client";
+
+import type { Differential, DifferentialIcon } from "@/config/content";
 import type { ReactNode } from "react";
 
 import { Container } from "@/components/layout/container";
 import { differentials } from "@/config/content";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 type FeatureIconProps = Readonly<{
   name: DifferentialIcon;
@@ -48,7 +51,37 @@ function FeatureIcon({ name }: FeatureIconProps) {
   );
 }
 
+type DifferentialCardProps = Readonly<{
+  differential: Differential;
+  delayMs: number;
+}>;
+
+function DifferentialCard({ differential, delayMs }: DifferentialCardProps) {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLLIElement>();
+
+  return (
+    <li
+      ref={elementRef}
+      className={`scroll-reveal bg-background p-6 sm:p-7 ${hasBeenRevealed ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${delayMs}ms` }}
+    >
+      <div className="grid size-12 place-items-center border border-accent/30 text-accent-strong">
+        <FeatureIcon name={differential.icon} />
+      </div>
+
+      <h3 className="mt-6 text-lg font-bold text-foreground uppercase">
+        {differential.title}
+      </h3>
+      <p className="mt-3 text-sm leading-6 text-muted">
+        {differential.description}
+      </p>
+    </li>
+  );
+}
+
 export function DifferentialsSection() {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLDivElement>();
+
   return (
     <section
       id="diferenciais"
@@ -56,7 +89,10 @@ export function DifferentialsSection() {
       className="relative py-16 sm:py-20 lg:py-24"
     >
       <Container className="grid gap-10 sm:gap-12 xl:grid-cols-[0.72fr_1.28fr] xl:gap-16">
-        <div className="xl:pt-4">
+        <div
+          ref={elementRef}
+          className={`scroll-reveal xl:pt-4 ${hasBeenRevealed ? "is-visible" : ""}`}
+        >
           <h2
             id="differentials-title"
             className="max-w-lg font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
@@ -71,22 +107,12 @@ export function DifferentialsSection() {
         </div>
 
         <ul className="grid gap-px overflow-hidden border border-foreground/10 bg-foreground/10 sm:grid-cols-3">
-          {differentials.map((differential) => (
-            <li
+          {differentials.map((differential, index) => (
+            <DifferentialCard
               key={differential.title}
-              className="bg-background p-6 sm:p-7"
-            >
-              <div className="grid size-12 place-items-center border border-accent/30 text-accent-strong">
-                <FeatureIcon name={differential.icon} />
-              </div>
-
-              <h3 className="mt-6 text-lg font-bold text-foreground uppercase">
-                {differential.title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                {differential.description}
-              </p>
-            </li>
+              differential={differential}
+              delayMs={index * 70}
+            />
           ))}
         </ul>
       </Container>
