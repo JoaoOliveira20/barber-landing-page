@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Barbearia do Léo",
-  initials: "BL",
-  title: "Barbearia do Léo | Corte e barba no Centro de Castanhal",
+  name: "Barbearia do Kelvin",
+  initials: "BK",
+  title: "Barbearia do Kelvin | Corte e barba no Centro de Castanhal",
   description:
     "Corte, barba e pezinho de terça a domingo no Centro de Castanhal. Agende pelo WhatsApp ou chegue e espere a vez.",
 } as const;
@@ -101,11 +101,11 @@ export type SocialLink = Readonly<{
 export const socialLinks = [
   {
     name: "Instagram",
-    url: "https://www.instagram.com/barbeariadoleo",
+    url: "https://www.instagram.com/barbeariadokelvin",
   },
   {
     name: "Facebook",
-    url: "https://www.facebook.com/barbeariadoleo",
+    url: "https://www.facebook.com/barbeariadokelvin",
   },
 ] as const satisfies readonly SocialLink[];
 

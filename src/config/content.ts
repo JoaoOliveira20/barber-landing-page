@@ -97,12 +97,12 @@ export type Barber = Readonly<{
 
 export const barbers = [
   {
-    name: "Léo",
+    name: "Kelvin",
     role: "Dono",
     bio: "Corta desde 2013. Começou atendendo na sala de casa e abriu a barbearia em 2018. Faz degradê e barba na navalha.",
   },
   {
-    name: "Kelvin",
+    name: "Léo",
     role: null,
     bio: "Entrou em 2021. É quem faz os cortes mais modernos, freestyle e desenho. Bom com criança.",
   },
@@ -118,13 +118,13 @@ export const testimonials = [
   {
     name: "Rafael",
     attribution: "cliente desde 2021",
-    quote: "Corto com o Léo há uns 4 anos. Nunca saí de lá insatisfeito.",
+    quote: "Corto com o Kelvin há uns 4 anos. Nunca saí de lá insatisfeito.",
   },
   {
     name: "Denise M.",
     attribution: null,
     quote:
-      "Levei meu filho de 7 anos, que tem pavor de barbeiro. O Kelvin teve uma paciência que eu não esperava, cortou brincando com ele o tempo todo. Voltamos semana passada e ele já foi correndo sentar na cadeira.",
+      "Levei meu filho de 7 anos, que tem pavor de barbeiro. O Léo teve uma paciência que eu não esperava, cortou brincando com ele o tempo todo. Voltamos semana passada e ele já foi correndo sentar na cadeira.",
   },
   {
     name: "Anderson",
