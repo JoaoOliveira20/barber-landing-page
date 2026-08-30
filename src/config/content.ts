@@ -169,10 +169,4 @@ export const galleryItems: readonly GalleryItem[] = [
       alt: "Barbeiro fazendo a barba de um cliente com navalha",
     },
   },
-  {
-    image: {
-      src: "/images/barber-finish.webp",
-      alt: "Cliente observando o acabamento do corte no espelho",
-    },
-  },
 ];
