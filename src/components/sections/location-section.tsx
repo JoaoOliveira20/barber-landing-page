@@ -14,7 +14,7 @@ export function LocationSection() {
       className="py-16 sm:py-20 lg:py-24"
     >
       <Container>
-        <div className="grid overflow-hidden border border-white/10 bg-surface shadow-[0_28px_90px_rgba(0,0,0,0.3)] xl:grid-cols-[1.18fr_0.82fr]">
+        <div className="grid overflow-hidden border border-foreground/10 bg-surface shadow-[0_28px_90px_rgba(0,0,0,0.3)] xl:grid-cols-[1.18fr_0.82fr]">
           <div className="relative min-h-72 bg-surface-elevated sm:min-h-96 xl:min-h-[42rem]">
             <iframe
               src={address.mapsEmbedUrl}
@@ -29,7 +29,7 @@ export function LocationSection() {
           <div className="p-6 sm:p-10 xl:p-12">
             <h2
               id="location-title"
-              className="font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl xl:text-5xl"
+              className="font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl xl:text-5xl"
             >
               Onde ficamos
             </h2>
@@ -49,12 +49,12 @@ export function LocationSection() {
               <span aria-hidden="true">↗</span>
             </a>
 
-            <div className="mt-9 border-t border-white/10 pt-8">
+            <div className="mt-9 border-t border-foreground/10 pt-8">
               <h3 className="text-xs font-bold tracking-[0.2em] text-foreground uppercase">
                 Horários de funcionamento
               </h3>
 
-              <dl className="mt-5 divide-y divide-white/8">
+              <dl className="mt-5 divide-y divide-foreground/8">
                 {businessHours.map((schedule) => (
                   <div
                     key={schedule.days}

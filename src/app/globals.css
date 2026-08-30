@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090908;
-  --surface: #151411;
-  --surface-elevated: #1d1b17;
-  --foreground: #f5f0e6;
-  --muted: #aaa294;
-  --subtle: #898276;
-  --border: #302d27;
-  --accent: #c8943f;
-  --accent-strong: #e0b45d;
-  --accent-foreground: #171006;
+  --background: #1e4034;
+  --surface: #24493b;
+  --surface-elevated: #2b5444;
+  --foreground: #efe7d8;
+  --muted: #8a8578;
+  --subtle: #6e6a60;
+  --border: #33513f;
+  --accent: #c08a2e;
+  --accent-strong: #d9a347;
+  --accent-foreground: #14100d;
 }
 
 @theme inline {
@@ -24,8 +24,8 @@
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-display: Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-body-family), Arial, Helvetica, sans-serif;
+  --font-display: var(--font-display-family), Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -41,15 +41,9 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(
-      circle at 50% -10%,
-      rgb(200 148 63 / 12%),
-      transparent 30rem
-    ),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
 }
 
@@ -93,7 +87,7 @@ button {
 
 .whatsapp-cta:hover {
   transform: translateY(-0.125rem);
-  box-shadow: 0 14px 38px rgb(200 148 63 / 22%);
+  box-shadow: 0 14px 38px rgb(192 138 46 / 22%);
 }
 
 .whatsapp-cta:active {

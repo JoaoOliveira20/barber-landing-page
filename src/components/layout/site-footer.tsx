@@ -9,7 +9,7 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-surface">
+    <footer className="border-t border-foreground/10 bg-surface">
       <Container className="grid gap-8 py-10 sm:gap-10 sm:py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:py-14 lg:py-16">
         <div>
           <a
@@ -19,11 +19,11 @@ export function SiteFooter() {
           >
             <span
               aria-hidden="true"
-              className="grid size-10 place-items-center border border-accent/60 font-display text-sm font-semibold text-accent-strong"
+              className="grid size-10 place-items-center border border-accent/60 font-display text-sm text-accent-strong uppercase"
             >
               {siteConfig.initials}
             </span>
-            <span className="font-display text-xl font-semibold tracking-wide text-foreground">
+            <span className="font-display text-xl tracking-wide text-foreground uppercase">
               {siteConfig.name}
             </span>
           </a>
@@ -75,7 +75,7 @@ export function SiteFooter() {
         </div>
       </Container>
 
-      <div className="border-t border-white/8">
+      <div className="border-t border-foreground/8">
         <Container className="flex flex-col gap-2 pt-5 pb-24 text-xs text-subtle sm:flex-row sm:items-center sm:justify-between lg:py-5">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos

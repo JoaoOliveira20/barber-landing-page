@@ -6,12 +6,12 @@ export function BarbersSection() {
     <section
       id="barbeiros"
       aria-labelledby="barbers-title"
-      className="border-t border-white/8 py-16 sm:py-20 lg:py-24"
+      className="border-t border-foreground/8 py-16 sm:py-20 lg:py-24"
     >
       <Container>
         <h2
           id="barbers-title"
-          className="mx-auto max-w-md text-center font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+          className="mx-auto max-w-md text-center font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
         >
           Quem vai te atender
         </h2>
@@ -20,10 +20,10 @@ export function BarbersSection() {
           {barbers.map((barber) => (
             <li
               key={barber.name}
-              className="border border-white/10 bg-surface p-6 sm:p-7"
+              className="border border-foreground/10 bg-surface p-6 sm:p-7"
             >
               <div className="flex items-baseline gap-3">
-                <h3 className="font-display text-2xl font-semibold text-foreground">
+                <h3 className="font-display text-2xl text-foreground uppercase">
                   {barber.name}
                 </h3>
                 {barber.role ? (

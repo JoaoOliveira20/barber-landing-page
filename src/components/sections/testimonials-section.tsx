@@ -11,7 +11,7 @@ export function TestimonialsSection() {
       <Container>
         <h2
           id="testimonials-title"
-          className="max-w-2xl font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+          className="max-w-2xl font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
         >
           O que dizem
         </h2>
@@ -22,14 +22,14 @@ export function TestimonialsSection() {
               key={testimonial.name}
               className="min-w-[88%] snap-center sm:min-w-[58%] lg:min-w-0"
             >
-              <figure className="flex h-full min-h-72 flex-col border border-white/10 bg-surface p-6 shadow-[0_18px_55px_rgba(0,0,0,0.18)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_65px_rgba(0,0,0,0.28)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-80 sm:p-8">
+              <figure className="flex h-full min-h-72 flex-col border border-foreground/10 bg-surface p-6 shadow-[0_18px_55px_rgba(0,0,0,0.18)] sm:min-h-80 sm:p-8">
                 <blockquote>
-                  <p className="font-display text-lg leading-7 text-foreground sm:text-2xl sm:leading-9">
+                  <p className="text-lg leading-7 text-foreground italic sm:text-xl sm:leading-8">
                     “{testimonial.quote}”
                   </p>
                 </blockquote>
 
-                <figcaption className="mt-auto border-t border-white/10 pt-6">
+                <figcaption className="mt-auto border-t border-foreground/10 pt-6">
                   <cite className="not-italic">
                     <span className="block text-sm font-bold text-foreground">
                       {testimonial.name}

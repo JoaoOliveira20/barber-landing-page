@@ -134,54 +134,45 @@ export const testimonials = [
   },
 ] as const satisfies readonly Testimonial[];
 
+export const galleryNote =
+  "Quatro cadeiras, ar-condicionado, e a espera com café ou cerveja por conta da casa.";
+
 export type GalleryItem = Readonly<{
-  layout: "featured" | "standard" | "wide";
   image: Readonly<{
     src: `/images/${string}`;
     alt: string;
-    objectPosition?: string;
   }>;
 }>;
 
 export const galleryItems: readonly GalleryItem[] = [
   {
-    layout: "featured",
     image: {
       src: "/images/barber-cut.webp",
       alt: "Barbeiro realizando um corte masculino na barbearia",
-      objectPosition: "64% center",
     },
   },
   {
-    layout: "standard",
     image: {
       src: "/images/barber-shop.webp",
       alt: "Interior da barbearia com espelhos e poltronas",
-      objectPosition: "center",
     },
   },
   {
-    layout: "standard",
     image: {
       src: "/images/barber-service.webp",
       alt: "Barbeiro cuidando do acabamento do cliente",
-      objectPosition: "65% center",
     },
   },
   {
-    layout: "standard",
     image: {
       src: "/images/beard.webp",
       alt: "Barbeiro desenhando o contorno da barba de um cliente",
-      objectPosition: "68% center",
     },
   },
   {
-    layout: "wide",
     image: {
       src: "/images/barber-finish.webp",
       alt: "Cliente observando o acabamento do corte no espelho",
-      objectPosition: "45% center",
     },
   },
 ];

@@ -9,16 +9,11 @@ export function HeroSection() {
       aria-labelledby="hero-title"
       className="relative isolate overflow-hidden"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(circle_at_top,rgba(200,148,63,0.16),transparent_65%)]"
-      />
-
       <Container className="py-12 sm:py-14 lg:py-16">
         <div className="max-w-2xl">
           <h1
             id="hero-title"
-            className="font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.08] font-semibold tracking-[-0.03em] text-foreground"
+            className="font-display text-[clamp(2.25rem,4.5vw,3.75rem)] leading-[1.08] text-foreground uppercase"
           >
             {heroContent.title}
           </h1>
@@ -32,7 +27,7 @@ export function HeroSection() {
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="whatsapp-cta inline-flex min-h-13 items-center justify-center gap-3 whitespace-nowrap bg-accent px-5 text-sm font-bold text-accent-foreground shadow-[0_14px_40px_rgba(200,148,63,0.18)] hover:bg-accent-strong sm:px-6"
+              className="whatsapp-cta inline-flex min-h-13 items-center justify-center gap-3 whitespace-nowrap bg-accent px-5 text-sm font-bold text-accent-foreground shadow-[0_14px_40px_rgba(192,138,46,0.18)] hover:bg-accent-strong sm:px-6"
               aria-label={`Chamar a ${siteConfig.name} no WhatsApp`}
             >
               {heroContent.primaryCtaLabel}
@@ -41,7 +36,7 @@ export function HeroSection() {
 
             <a
               href="#servicos"
-              className="inline-flex min-h-13 items-center justify-center gap-3 whitespace-nowrap border border-white/15 bg-white/5 px-5 text-sm font-bold text-foreground transition-colors hover:border-accent/60 hover:bg-white/8 sm:px-6"
+              className="inline-flex min-h-13 items-center justify-center gap-3 whitespace-nowrap border border-foreground/15 bg-foreground/5 px-5 text-sm font-bold text-foreground transition-colors hover:border-accent/60 hover:bg-foreground/8 sm:px-6"
             >
               {heroContent.secondaryCtaLabel}
               <span aria-hidden="true">↓</span>
@@ -50,7 +45,7 @@ export function HeroSection() {
 
           <ul
             aria-label="Informações rápidas"
-            className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs font-semibold tracking-wide text-muted uppercase sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:pt-6"
+            className="mt-8 flex flex-col gap-3 border-t border-foreground/10 pt-5 text-xs font-semibold tracking-wide text-muted uppercase sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:pt-6"
           >
             {heroContent.infoItems.map((item, index) => (
               <li

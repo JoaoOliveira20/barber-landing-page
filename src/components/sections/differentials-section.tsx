@@ -53,18 +53,13 @@ export function DifferentialsSection() {
     <section
       id="diferenciais"
       aria-labelledby="differentials-title"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative py-16 sm:py-20 lg:py-24"
     >
-      <div
-        aria-hidden="true"
-        className="absolute top-0 right-0 -z-10 size-[32rem] translate-x-1/2 rounded-full bg-accent/5 blur-3xl"
-      />
-
       <Container className="grid gap-10 sm:gap-12 xl:grid-cols-[0.72fr_1.28fr] xl:gap-16">
         <div className="xl:pt-4">
           <h2
             id="differentials-title"
-            className="max-w-lg font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+            className="max-w-lg font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
           >
             Por que os clientes voltam
           </h2>
@@ -75,17 +70,17 @@ export function DifferentialsSection() {
           />
         </div>
 
-        <ul className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-3">
+        <ul className="grid gap-px overflow-hidden border border-foreground/10 bg-foreground/10 sm:grid-cols-3">
           {differentials.map((differential) => (
             <li
               key={differential.title}
-              className="group bg-background p-6 transition-[background-color,box-shadow] duration-300 hover:bg-surface hover:shadow-[inset_0_1px_0_rgba(224,180,93,0.22)] motion-reduce:transition-none sm:p-7"
+              className="bg-background p-6 sm:p-7"
             >
-              <div className="grid size-12 place-items-center border border-accent/30 text-accent-strong transition-colors group-hover:border-accent">
+              <div className="grid size-12 place-items-center border border-accent/30 text-accent-strong">
                 <FeatureIcon name={differential.icon} />
               </div>
 
-              <h3 className="mt-6 font-display text-xl font-semibold text-foreground">
+              <h3 className="mt-6 font-display text-xl text-foreground uppercase">
                 {differential.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted">

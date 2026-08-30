@@ -7,7 +7,7 @@ import {
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/85 backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between gap-3 sm:h-18 sm:gap-4">
         <a
           href="#inicio"
@@ -16,11 +16,11 @@ export function SiteHeader() {
         >
           <span
             aria-hidden="true"
-            className="grid size-9 place-items-center border border-accent/60 font-display text-sm font-semibold text-accent-strong transition-colors group-hover:border-accent-strong"
+            className="grid size-9 place-items-center border border-accent/60 font-display text-sm text-accent-strong uppercase transition-colors group-hover:border-accent-strong"
           >
             {siteConfig.initials}
           </span>
-          <span className="hidden font-display text-lg font-semibold tracking-wide text-foreground sm:inline sm:text-xl">
+          <span className="hidden font-display text-lg tracking-wide text-foreground uppercase sm:inline sm:text-xl">
             {siteConfig.name}
           </span>
         </a>
