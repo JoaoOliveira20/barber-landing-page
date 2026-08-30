@@ -36,6 +36,7 @@ export function LocationSection() {
 
             <address className="mt-7 not-italic">
               <p className="text-base leading-7 text-muted">{address.full}</p>
+              <p className="mt-1 text-sm text-subtle">{address.reference}</p>
             </address>
 
             <a

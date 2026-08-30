@@ -110,15 +110,15 @@ export const socialLinks = [
 ] as const satisfies readonly SocialLink[];
 
 const addressData = {
-  street: "Av. Presidente Vargas, 1180",
+  street: "Av. Barão do Rio Branco",
   neighborhood: "Centro",
   city: "Castanhal",
   state: "PA",
-  reference: "A uma quadra da praça da matriz",
+  reference: "Perto do cruzamento com a Av. Presidente Vargas",
 } as const;
 
 const mapsQuery = encodeURIComponent(
-  `${addressData.street}, ${addressData.neighborhood}, ${addressData.city} - ${addressData.state}`,
+  `${addressData.street} com Av. Presidente Vargas, ${addressData.neighborhood}, ${addressData.city} - ${addressData.state}`,
 );
 
 export const address = {
