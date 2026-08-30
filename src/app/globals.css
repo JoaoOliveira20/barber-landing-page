@@ -109,6 +109,39 @@ button {
   transform: translateY(0);
 }
 
+.gallery-photo {
+  transition: transform 350ms ease-out;
+}
+
+.gallery-photo:hover {
+  transform: scale(1.04);
+}
+
+.price-row {
+  transition:
+    background-color 200ms ease,
+    transform 150ms ease;
+}
+
+.price-row:hover,
+.price-row:focus-visible {
+  background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+.price-row:active {
+  transform: scale(0.98);
+}
+
+.price-row-name {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.price-row:hover .price-row-name,
+.price-row:focus-visible .price-row-name {
+  transform: translateX(4px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -131,6 +164,31 @@ button {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .gallery-photo {
+    transition: none;
+  }
+
+  .gallery-photo:hover {
+    transform: none;
+  }
+
+  .price-row {
+    transition: background-color 200ms ease;
+  }
+
+  .price-row:active {
+    transform: none;
+  }
+
+  .price-row-name {
+    transition: none;
+  }
+
+  .price-row:hover .price-row-name,
+  .price-row:focus-visible .price-row-name {
+    transform: none;
   }
 }
 

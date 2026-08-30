@@ -18,7 +18,7 @@ function GalleryPhoto({ item }: GalleryPhotoProps) {
       alt={item.image.alt}
       fill
       sizes="(min-width: 640px) 33vw, 50vw"
-      className="object-cover"
+      className="gallery-photo object-cover"
     />
   );
 }
@@ -34,7 +34,7 @@ function GalleryTile({ item, delayMs }: GalleryTileProps) {
   return (
     <article
       ref={elementRef}
-      className={`scroll-reveal relative isolate aspect-[4/3] grow basis-[280px] overflow-hidden border border-foreground/10 ${hasBeenRevealed ? "is-visible" : ""}`}
+      className={`scroll-reveal relative isolate aspect-square grow basis-[280px] overflow-hidden border border-foreground/10 ${hasBeenRevealed ? "is-visible" : ""}`}
       style={{ transitionDelay: `${delayMs}ms` }}
     >
       <GalleryPhoto item={item} />
@@ -49,7 +49,7 @@ export function GallerySection() {
     <section
       id="galeria"
       aria-labelledby="gallery-title"
-      className="border-t border-foreground/8 bg-surface py-16 sm:py-20 lg:py-24"
+      className="border-t border-foreground/8 bg-surface py-12 sm:py-16 lg:py-20"
     >
       <Container>
         <div
