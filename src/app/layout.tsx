@@ -21,6 +21,9 @@ const displayFont = Anton({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  ),
   title: siteConfig.title,
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
   },

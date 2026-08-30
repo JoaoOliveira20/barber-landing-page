@@ -1,18 +1,18 @@
-# Prime Barber Landing Page
+# Barbearia do Kelvin — Landing Page
 
-Landing page one-page para a barbearia fictícia **Prime Barber**, desenvolvida com foco em apresentação comercial, responsividade, performance e conversão por WhatsApp.
+Landing page one-page para a **Barbearia do Kelvin**, barbearia fictícia de bairro no Centro de Castanhal (PA), desenvolvida como peça de portfólio comercial para venda de sites a pequenos negócios.
 
-O projeto simula a presença digital de uma barbearia premium, apresentando serviços, diferenciais, depoimentos, galeria, localização e horários de funcionamento em uma interface moderna, elegante e acessível.
+O projeto foi propositalmente redesenhado a partir de um template genérico de barbearia "premium" para ter identidade de bairro: texto informal em português, paleta de couro (marrom, creme e latão), tipografia condensada nos títulos de seção lembrando placa pintada, e a lista de serviços tratada como cardápio de parede — o elemento de assinatura da página.
 
 ## Preview
 
 > Em breve: adicionar link do projeto publicado na Vercel.
 
+Ao publicar, defina a variável de ambiente `NEXT_PUBLIC_SITE_URL` com o domínio final (ex.: `https://barbeariadokelvin.vercel.app`) para que a imagem Open Graph seja referenciada com a URL correta.
+
 ## Objetivo
 
-Criar uma landing page moderna e responsiva para servir como projeto de portfólio e exemplo comercial de página institucional para pequenos negócios.
-
-A proposta principal da página é incentivar o visitante a entrar em contato pelo WhatsApp para agendar um horário.
+Servir como projeto de portfólio e exemplo comercial de página institucional para um pequeno negócio local, incentivando o visitante a entrar em contato pelo WhatsApp para agendar um horário ou simplesmente chegar e esperar a vez.
 
 ## Tecnologias utilizadas
 
@@ -20,6 +20,8 @@ A proposta principal da página é incentivar o visitante a entrar em contato pe
 * React
 * TypeScript
 * Tailwind CSS
+* `next/font` (Google Fonts: Anton e Archivo)
+* `next/og` para geração da imagem Open Graph
 * HTML semântico
 
 ## Funcionalidades
@@ -27,15 +29,14 @@ A proposta principal da página é incentivar o visitante a entrar em contato pe
 * Layout responsivo para celular, tablet e desktop
 * CTA principal direcionado ao WhatsApp
 * Botão flutuante de WhatsApp
-* Seção de serviços com preços e duração média
-* Seção de diferenciais da barbearia
-* Seção de experiência do cliente
-* Depoimentos com avaliações fictícias de cinco estrelas
-* Galeria visual com imagens otimizadas
-* Localização com mapa incorporado
-* Horários de funcionamento
+* Seção "Serviços e preços" com tratamento de placa de parede
+* Seção de diferenciais do negócio
+* Seção com os barbeiros que atendem
+* Depoimentos com textos de tamanhos variados, sem avaliação por estrelas
+* Galeria de fotos em mosaico que se ajusta a qualquer quantidade de imagens, sem deixar buracos no grid
+* Localização com mapa incorporado e horários de funcionamento
+* Imagem Open Graph gerada dinamicamente a partir do conteúdo do site
 * Footer com navegação rápida e redes sociais
-* Metadata básica para SEO
 * Conteúdo centralizado em arquivos de configuração
 
 ## Como executar localmente
@@ -131,12 +132,11 @@ src/config/site.ts
 
 Nesse arquivo é possível alterar:
 
-* nome da barbearia;
+* nome e iniciais da barbearia;
 * título e descrição do site;
-* número do WhatsApp;
-* mensagem padrão do WhatsApp;
-* endereço;
-* link do Google Maps;
+* número do WhatsApp da barbearia e mensagem padrão;
+* linha de apresentação do footer;
+* endereço, referência de localização e link do Google Maps;
 * horários de funcionamento;
 * links de redes sociais.
 
@@ -158,20 +158,24 @@ src/config/content.ts
 
 Nesse arquivo é possível alterar:
 
-* serviços;
-* descrições;
-* preços;
-* duração média dos serviços;
+* título e subtítulo do hero;
+* serviços, preços e duração;
 * diferenciais;
-* textos da seção de experiência;
+* barbeiros que atendem;
 * depoimentos;
-* itens da galeria.
+* imagens da galeria.
+
+### Imagens
+
+As imagens usadas nas seções ficam em `public/images`. Para trocar uma foto, substitua o arquivo mantendo o mesmo nome — os componentes não dependem de proporção específica de imagem.
 
 ## Estrutura principal do projeto
 
 ```txt
 src/
 ├── app/
+│   ├── opengraph-image.tsx
+│   └── ...
 ├── components/
 │   ├── layout/
 │   ├── sections/
@@ -185,7 +189,7 @@ src/
 
 O projeto foi organizado para manter a landing page simples, reutilizável e fácil de editar.
 
-* `src/app`: estrutura principal do App Router.
+* `src/app`: estrutura principal do App Router, incluindo a geração da imagem Open Graph.
 * `src/components/layout`: componentes estruturais da página.
 * `src/components/sections`: seções principais da landing page.
 * `src/components/ui`: componentes reutilizáveis de interface.
@@ -201,8 +205,6 @@ Os nomes, depoimentos, preços, contatos, endereços e demais informações exib
 
 * Publicar o projeto na Vercel
 * Adicionar link de demonstração online no README
-* Adicionar imagem Open Graph para compartilhamento em redes sociais
-* Melhorar microinterações sem comprometer a performance
 * Adicionar testes automatizados de acessibilidade
 * Integrar métricas de acesso e conversão respeitando privacidade e consentimento
 * Conectar o agendamento a um serviço externo caso o projeto evolua para uso real
