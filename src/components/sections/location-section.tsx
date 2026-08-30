@@ -39,16 +39,13 @@ export function LocationSection() {
 
             <address className="mt-7 not-italic">
               <p className="text-base leading-7 text-muted">{address.full}</p>
-              <p className="mt-1 text-sm text-subtle">
-                CEP {address.postalCode}
-              </p>
             </address>
 
             <a
               href={address.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label="Abrir a localização da Prime Barber no Google Maps"
+              aria-label={`Abrir a localização da ${siteConfig.name} no Google Maps`}
               className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-accent-strong transition-colors hover:text-foreground"
             >
               Abrir no Google Maps
@@ -80,7 +77,7 @@ export function LocationSection() {
               target="_blank"
               rel="noreferrer"
               className="whatsapp-cta mt-9 inline-flex min-h-13 w-full items-center justify-center gap-3 whitespace-nowrap bg-accent px-5 text-sm font-bold text-accent-foreground hover:bg-accent-strong sm:px-6"
-              aria-label="Agendar um horário na Prime Barber pelo WhatsApp"
+              aria-label={`Agendar um horário na ${siteConfig.name} pelo WhatsApp`}
             >
               Agendar pelo WhatsApp
               <span aria-hidden="true">↗</span>

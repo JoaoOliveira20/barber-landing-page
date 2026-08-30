@@ -1,48 +1,66 @@
+export type HeroContent = Readonly<{
+  title: string;
+  subtitle: string;
+  primaryCtaLabel: string;
+  secondaryCtaLabel: string;
+  infoItems: readonly string[];
+}>;
+
+export const heroContent: HeroContent = {
+  title: "Mais de dez anos cortando cabelo no Centro de Castanhal.",
+  subtitle:
+    "Corte, barba e pezinho de terça a domingo. Marca pelo WhatsApp ou chega e espera a vez, do jeito que você preferir.",
+  primaryCtaLabel: "Chamar no WhatsApp",
+  secondaryCtaLabel: "Ver preços",
+  infoItems: [
+    "Terça a domingo",
+    "Centro de Castanhal",
+    "Pix, cartão e dinheiro",
+  ],
+} as const;
+
 export type Service = Readonly<{
   name: string;
-  description: string;
   duration: string;
   price: string;
 }>;
 
 export const services = [
   {
-    name: "Corte Masculino",
-    description:
-      "Corte personalizado, acabamento preciso e finalização para o seu estilo.",
-    duration: "45 min",
-    price: "R$ 65",
+    name: "Corte masculino",
+    duration: "40 min",
+    price: "R$ 30",
   },
   {
-    name: "Barba",
-    description:
-      "Contorno, modelagem e acabamento com toalha quente e produtos especiais.",
-    duration: "35 min",
+    name: "Barba na navalha",
+    duration: "30 min",
+    price: "R$ 25",
+  },
+  {
+    name: "Corte + barba",
+    duration: "1h10",
     price: "R$ 50",
   },
   {
-    name: "Combo Corte + Barba",
-    description:
-      "A experiência completa para renovar o corte e cuidar da barba.",
-    duration: "1h 15 min",
-    price: "R$ 105",
+    name: "Corte infantil (até 10 anos)",
+    duration: "30 min",
+    price: "R$ 25",
+  },
+  {
+    name: "Pezinho",
+    duration: "10 min",
+    price: "R$ 10",
   },
   {
     name: "Sobrancelha",
-    description:
-      "Alinhamento discreto e natural para valorizar a expressão do rosto.",
-    duration: "15 min",
-    price: "R$ 25",
+    duration: "10 min",
+    price: "R$ 10",
   },
 ] as const satisfies readonly Service[];
 
-export type DifferentialIcon =
-  | "calendar"
-  | "expertise"
-  | "comfort"
-  | "drink"
-  | "products"
-  | "location";
+export const servicesNote = "Sábado depois das 16h, só com agendamento.";
+
+export type DifferentialIcon = "drink" | "location" | "calendar";
 
 export type Differential = Readonly<{
   title: string;
@@ -52,40 +70,22 @@ export type Differential = Readonly<{
 
 export const differentials = [
   {
-    title: "Atendimento com horário marcado",
+    title: "Cerveja gelada e café",
     description:
-      "Seu horário é reservado para um atendimento pontual, tranquilo e sem pressa.",
-    icon: "calendar",
-  },
-  {
-    title: "Profissionais experientes",
-    description:
-      "Técnica apurada e atenção aos detalhes em cada corte, barba e acabamento.",
-    icon: "expertise",
-  },
-  {
-    title: "Ambiente confortável",
-    description:
-      "Um espaço elegante e acolhedor, pensado para você relaxar durante a visita.",
-    icon: "comfort",
-  },
-  {
-    title: "Café ou cerveja gelada",
-    description:
-      "Uma cortesia para acompanhar seu momento e deixar a experiência ainda melhor.",
+      "Tem cerveja na geladeira e café passado na hora. Por conta da casa.",
     icon: "drink",
   },
   {
-    title: "Produtos profissionais",
+    title: "Dá pra parar na frente",
     description:
-      "Selecionamos produtos de alta qualidade para cuidar dos fios, da barba e da pele.",
-    icon: "products",
+      "Carro ou moto, tem espaço na porta. Você não vai rodar atrás de vaga.",
+    icon: "location",
   },
   {
-    title: "Localização fácil",
+    title: "Com ou sem agendamento",
     description:
-      "Estamos em uma região acessível, com opções de estacionamento nas proximidades.",
-    icon: "location",
+      "Marcou, seu horário fica guardado. Não marcou, chega e espera a vez.",
+    icon: "calendar",
   },
 ] as const satisfies readonly Differential[];
 
@@ -118,34 +118,48 @@ export const experienceContent = {
   ] satisfies readonly ExperienceHighlight[],
 } as const;
 
+export type Barber = Readonly<{
+  name: string;
+  role: string | null;
+  bio: string;
+}>;
+
+export const barbers = [
+  {
+    name: "Léo",
+    role: "Dono",
+    bio: "Corta desde 2013. Começou atendendo na sala de casa e abriu a barbearia em 2018. Faz degradê e barba na navalha.",
+  },
+  {
+    name: "Kelvin",
+    role: null,
+    bio: "Entrou em 2021. É quem faz os cortes mais modernos, freestyle e desenho. Bom com criança.",
+  },
+] as const satisfies readonly Barber[];
+
 export type Testimonial = Readonly<{
   name: string;
-  occupation: string;
+  attribution: string | null;
   quote: string;
-  rating: 5;
 }>;
 
 export const testimonials = [
   {
-    name: "Rafael Martins",
-    occupation: "Cliente há 2 anos",
-    quote:
-      "Atendimento impecável e corte sempre consistente. É o tipo de lugar em que você chega e já sabe que vai sair bem.",
-    rating: 5,
+    name: "Rafael",
+    attribution: "cliente desde 2021",
+    quote: "Corto com o Léo há uns 4 anos. Nunca saí de lá insatisfeito.",
   },
   {
-    name: "Lucas Almeida",
-    occupation: "Cliente há 1 ano",
+    name: "Denise M.",
+    attribution: null,
     quote:
-      "O cuidado com a barba e os detalhes do acabamento fazem muita diferença. Ambiente excelente e equipe muito atenciosa.",
-    rating: 5,
+      "Levei meu filho de 7 anos, que tem pavor de barbeiro. O Kelvin teve uma paciência que eu não esperava, cortou brincando com ele o tempo todo. Voltamos semana passada e ele já foi correndo sentar na cadeira.",
   },
   {
-    name: "Bruno Ferreira",
-    occupation: "Cliente há 8 meses",
+    name: "Anderson",
+    attribution: null,
     quote:
-      "Agendamento rápido, atendimento pontual e um resultado que realmente combina com meu estilo.",
-    rating: 5,
+      "Quando tá cheio no sábado demora um pouco, mas o corte compensa. Prefiro marcar durante a semana.",
   },
 ] as const satisfies readonly Testimonial[];
 

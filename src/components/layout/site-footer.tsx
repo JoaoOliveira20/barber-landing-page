@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import {
   address,
   footerLinks,
+  footerTagline,
   siteConfig,
   socialLinks,
 } from "@/config/site";
@@ -20,7 +21,7 @@ export function SiteFooter() {
               aria-hidden="true"
               className="grid size-10 place-items-center border border-accent/60 font-display text-sm font-semibold text-accent-strong"
             >
-              PB
+              {siteConfig.initials}
             </span>
             <span className="font-display text-xl font-semibold tracking-wide text-foreground">
               {siteConfig.name}
@@ -28,8 +29,7 @@ export function SiteFooter() {
           </a>
 
           <p className="mt-5 max-w-sm text-sm leading-6 text-muted">
-            Corte, barba e cuidado masculino em uma experiência feita com
-            técnica, conforto e atenção aos detalhes.
+            {footerTagline}
           </p>
           <p className="mt-4 text-sm text-subtle">{address.full}</p>
         </div>
@@ -63,7 +63,7 @@ export function SiteFooter() {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${social.name} da Prime Barber (abre em nova aba)`}
+                  aria-label={`${social.name} da ${siteConfig.name} (abre em nova aba)`}
                   className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent-strong"
                 >
                   {social.name}

@@ -17,30 +17,11 @@ function FeatureIcon({ name }: FeatureIconProps) {
         <path d="m9 15 2 2 4-5" />
       </>
     ),
-    expertise: (
-      <>
-        <path d="m6 4 12 16M18 4 6 20" />
-        <circle cx="6" cy="4" r="2" />
-        <circle cx="18" cy="4" r="2" />
-      </>
-    ),
-    comfort: (
-      <>
-        <path d="M5 12V8a3 3 0 0 1 6 0v4M13 12V8a3 3 0 0 1 6 0v4" />
-        <path d="M4 12h16v7H4zM7 19v2M17 19v2" />
-      </>
-    ),
     drink: (
       <>
         <path d="M6 5h10v8a5 5 0 0 1-10 0V5Z" />
         <path d="M16 8h2a3 3 0 0 1 0 6h-2M8 2v1M12 2v1" />
         <path d="M5 21h12" />
-      </>
-    ),
-    products: (
-      <>
-        <path d="M9 3h6v4H9zM8 7h8l2 4v10H6V11l2-4Z" />
-        <path d="M9 14h6M12 11v6" />
       </>
     ),
     location: (

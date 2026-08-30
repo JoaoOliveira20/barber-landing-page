@@ -1,32 +1,5 @@
-import type { Testimonial } from "@/config/content";
-
 import { Container } from "@/components/layout/container";
 import { testimonials } from "@/config/content";
-
-type RatingStarsProps = Readonly<{
-  rating: Testimonial["rating"];
-}>;
-
-function RatingStars({ rating }: RatingStarsProps) {
-  return (
-    <div
-      role="img"
-      aria-label={`Avaliação: ${rating} de 5 estrelas`}
-      className="flex gap-1 text-accent-strong"
-    >
-      {Array.from({ length: rating }, (_, index) => (
-        <svg
-          key={index}
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          className="size-4 fill-current"
-        >
-          <path d="m12 2.5 2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.31l-5.8 3.05 1.11-6.46-4.7-4.58 6.49-.94L12 2.5Z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
 
 export function TestimonialsSection() {
   return (
@@ -62,8 +35,7 @@ export function TestimonialsSection() {
               className="min-w-[88%] snap-center sm:min-w-[58%] lg:min-w-0"
             >
               <figure className="flex h-full min-h-72 flex-col border border-white/10 bg-surface p-6 shadow-[0_18px_55px_rgba(0,0,0,0.18)] transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_65px_rgba(0,0,0,0.28)] motion-reduce:transform-none motion-reduce:transition-none sm:min-h-80 sm:p-8">
-                <div className="flex items-center justify-between gap-4">
-                  <RatingStars rating={testimonial.rating} />
+                <div className="flex items-center justify-end gap-4">
                   <span
                     aria-hidden="true"
                     className="font-display text-sm text-accent/70"
@@ -83,9 +55,11 @@ export function TestimonialsSection() {
                     <span className="block text-sm font-bold text-foreground">
                       {testimonial.name}
                     </span>
-                    <span className="mt-1 block text-xs text-muted">
-                      {testimonial.occupation}
-                    </span>
+                    {testimonial.attribution ? (
+                      <span className="mt-1 block text-xs text-muted">
+                        {testimonial.attribution}
+                      </span>
+                    ) : null}
                   </cite>
                 </figcaption>
               </figure>

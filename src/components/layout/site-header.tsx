@@ -18,7 +18,7 @@ export function SiteHeader() {
             aria-hidden="true"
             className="grid size-9 place-items-center border border-accent/60 font-display text-sm font-semibold text-accent-strong transition-colors group-hover:border-accent-strong"
           >
-            PB
+            {siteConfig.initials}
           </span>
           <span className="hidden font-display text-lg font-semibold tracking-wide text-foreground sm:inline sm:text-xl">
             {siteConfig.name}
@@ -45,7 +45,7 @@ export function SiteHeader() {
           target="_blank"
           rel="noreferrer"
           className="whatsapp-cta inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap bg-accent px-3 text-xs font-bold text-accent-foreground hover:bg-accent-strong sm:px-5 sm:text-sm"
-          aria-label="Chamar a Prime Barber no WhatsApp"
+          aria-label={`Chamar a ${siteConfig.name} no WhatsApp`}
         >
           <span className="sm:hidden">WhatsApp</span>
           <span className="hidden sm:inline">Chamar no WhatsApp</span>

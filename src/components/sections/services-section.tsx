@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/container";
-import { services } from "@/config/content";
+import { services, servicesNote } from "@/config/content";
 
 export function ServicesSection() {
   return (
@@ -47,10 +47,6 @@ export function ServicesSection() {
                 {service.name}
               </h3>
 
-              <p className="mt-4 text-sm leading-6 text-muted">
-                {service.description}
-              </p>
-
               <dl className="mt-auto flex items-end justify-between gap-5 border-t border-white/10 pt-6">
                 <div>
                   <dt className="text-[0.65rem] font-bold tracking-[0.18em] text-subtle uppercase">
@@ -73,6 +69,10 @@ export function ServicesSection() {
             </article>
           ))}
         </div>
+
+        <p className="mt-6 text-sm font-semibold text-accent-strong">
+          {servicesNote}
+        </p>
       </Container>
     </section>
   );

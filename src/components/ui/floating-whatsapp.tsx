@@ -1,4 +1,4 @@
-import { whatsappUrl } from "@/config/site";
+import { siteConfig, whatsappUrl } from "@/config/site";
 
 export function FloatingWhatsApp() {
   return (
@@ -6,7 +6,7 @@ export function FloatingWhatsApp() {
       href={whatsappUrl}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chamar a Prime Barber no WhatsApp"
+      aria-label={`Chamar a ${siteConfig.name} no WhatsApp`}
       className="whatsapp-cta fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 inline-flex size-13 items-center justify-center rounded-full border border-accent-strong/40 bg-accent font-bold text-accent-foreground shadow-[0_16px_45px_rgba(0,0,0,0.45)] hover:bg-accent-strong sm:right-[max(1.5rem,env(safe-area-inset-right))] sm:bottom-[max(1.5rem,env(safe-area-inset-bottom))] sm:h-13 sm:w-auto sm:gap-3 sm:px-5"
     >
       <svg
