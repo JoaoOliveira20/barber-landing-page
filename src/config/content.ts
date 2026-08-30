@@ -160,13 +160,13 @@ export const galleryItems: readonly GalleryItem[] = [
   {
     image: {
       src: "/images/barber-service.webp",
-      alt: "Barbeiro cuidando do acabamento do cliente",
+      alt: "Área de espera da barbearia com sofá e geladeira de bebidas",
     },
   },
   {
     image: {
       src: "/images/beard.webp",
-      alt: "Barbeiro desenhando o contorno da barba de um cliente",
+      alt: "Barbeiro fazendo a barba de um cliente com navalha",
     },
   },
   {
