@@ -109,11 +109,11 @@ export type SocialLink = Readonly<{
 export const socialLinks = [
   {
     name: "Instagram",
-    url: "https://www.instagram.com/barbeariadokelvin",
+    url: "https://www.instagram.com",
   },
   {
     name: "Facebook",
-    url: "https://www.facebook.com/barbeariadokelvin",
+    url: "https://www.facebook.com",
   },
 ] as const satisfies readonly SocialLink[];
 
