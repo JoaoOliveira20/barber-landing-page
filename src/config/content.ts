@@ -135,7 +135,7 @@ export const testimonials = [
 ] as const satisfies readonly Testimonial[];
 
 export const galleryNote =
-  "Quatro cadeiras e um espelho grande de parede a parede.";
+  "Quatro cadeiras, sofá de espera e café sempre pronto.";
 
 export type GalleryItem = Readonly<{
   image: Readonly<{

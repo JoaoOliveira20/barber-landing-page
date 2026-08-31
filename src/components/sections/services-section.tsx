@@ -45,7 +45,7 @@ export function ServicesSection() {
                     className="price-row flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-6 py-5 sm:flex-nowrap sm:gap-x-6 sm:px-10 sm:py-6"
                   >
                     <div className="flex min-w-0 flex-1 items-baseline gap-3">
-                      <span className="price-row-name font-bold whitespace-nowrap text-foreground uppercase sm:text-lg">
+                      <span className="price-row-name font-bold whitespace-normal text-foreground uppercase sm:whitespace-nowrap sm:text-lg">
                         {service.name}
                       </span>
                       <span
