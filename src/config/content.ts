@@ -60,7 +60,7 @@ export const services = [
 
 export const servicesNote = "Sábado depois das 16h, só com agendamento.";
 
-export type DifferentialIcon = "drink" | "location" | "calendar";
+export type DifferentialIcon = "location" | "calendar";
 
 export type Differential = Readonly<{
   title: string;
@@ -70,10 +70,10 @@ export type Differential = Readonly<{
 
 export const differentials = [
   {
-    title: "Cerveja gelada e café",
+    title: "Climatizado",
     description:
-      "Tem cerveja na geladeira e café passado na hora. Por conta da casa.",
-    icon: "drink",
+      "Ar-condicionado ligado o dia todo. Você espera a vez no fresco, com café por conta da casa.",
+    icon: "location",
   },
   {
     title: "Dá pra parar na frente",
@@ -135,7 +135,7 @@ export const testimonials = [
 ] as const satisfies readonly Testimonial[];
 
 export const galleryNote =
-  "Quatro cadeiras, ar-condicionado, e a espera com café ou cerveja por conta da casa.";
+  "Quatro cadeiras e um espelho grande de parede a parede.";
 
 export type GalleryItem = Readonly<{
   image: Readonly<{

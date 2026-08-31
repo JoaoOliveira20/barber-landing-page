@@ -20,13 +20,6 @@ function FeatureIcon({ name }: FeatureIconProps) {
         <path d="m9 15 2 2 4-5" />
       </>
     ),
-    drink: (
-      <>
-        <path d="M6 5h10v8a5 5 0 0 1-10 0V5Z" />
-        <path d="M16 8h2a3 3 0 0 1 0 6h-2M8 2v1M12 2v1" />
-        <path d="M5 21h12" />
-      </>
-    ),
     location: (
       <>
         <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
