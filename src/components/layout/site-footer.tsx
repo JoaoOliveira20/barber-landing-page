@@ -2,13 +2,14 @@ import { Container } from "@/components/layout/container";
 import {
   address,
   footerLinks,
+  footerTagline,
   siteConfig,
   socialLinks,
 } from "@/config/site";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-surface">
+    <footer className="border-t border-foreground/10 bg-surface">
       <Container className="grid gap-8 py-10 sm:gap-10 sm:py-12 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:py-14 lg:py-16">
         <div>
           <a
@@ -18,18 +19,17 @@ export function SiteFooter() {
           >
             <span
               aria-hidden="true"
-              className="grid size-10 place-items-center border border-accent/60 font-display text-sm font-semibold text-accent-strong"
+              className="grid size-10 place-items-center border border-accent/60 text-sm font-bold text-accent-strong uppercase"
             >
-              PB
+              {siteConfig.initials}
             </span>
-            <span className="font-display text-xl font-semibold tracking-wide text-foreground">
+            <span className="text-xl font-bold tracking-wide text-foreground uppercase">
               {siteConfig.name}
             </span>
           </a>
 
           <p className="mt-5 max-w-sm text-sm leading-6 text-muted">
-            Corte, barba e cuidado masculino em uma experiência feita com
-            técnica, conforto e atenção aos detalhes.
+            {footerTagline}
           </p>
           <p className="mt-4 text-sm text-subtle">{address.full}</p>
         </div>
@@ -63,7 +63,7 @@ export function SiteFooter() {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${social.name} da Prime Barber (abre em nova aba)`}
+                  aria-label={`${social.name} da ${siteConfig.name} (abre em nova aba)`}
                   className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent-strong"
                 >
                   {social.name}
@@ -75,7 +75,7 @@ export function SiteFooter() {
         </div>
       </Container>
 
-      <div className="border-t border-white/8">
+      <div className="border-t border-foreground/8">
         <Container className="flex flex-col gap-2 pt-5 pb-24 text-xs text-subtle sm:flex-row sm:items-center sm:justify-between lg:py-5">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos

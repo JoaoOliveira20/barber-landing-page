@@ -1,8 +1,11 @@
-import type { DifferentialIcon } from "@/config/content";
+"use client";
+
+import type { Differential, DifferentialIcon } from "@/config/content";
 import type { ReactNode } from "react";
 
 import { Container } from "@/components/layout/container";
 import { differentials } from "@/config/content";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 type FeatureIconProps = Readonly<{
   name: DifferentialIcon;
@@ -10,37 +13,18 @@ type FeatureIconProps = Readonly<{
 
 function FeatureIcon({ name }: FeatureIconProps) {
   const paths: Record<DifferentialIcon, ReactNode> = {
+    breeze: (
+      <>
+        <path d="M3 8h10a2.5 2.5 0 1 0-2.5-2.5" />
+        <path d="M3 12h14a2.5 2.5 0 1 1-2.5 2.5" />
+        <path d="M3 16h7a2 2 0 1 0-2-2" />
+      </>
+    ),
     calendar: (
       <>
         <path d="M7 3v3M17 3v3M4 9h16" />
         <rect x="4" y="5" width="16" height="16" rx="2" />
         <path d="m9 15 2 2 4-5" />
-      </>
-    ),
-    expertise: (
-      <>
-        <path d="m6 4 12 16M18 4 6 20" />
-        <circle cx="6" cy="4" r="2" />
-        <circle cx="18" cy="4" r="2" />
-      </>
-    ),
-    comfort: (
-      <>
-        <path d="M5 12V8a3 3 0 0 1 6 0v4M13 12V8a3 3 0 0 1 6 0v4" />
-        <path d="M4 12h16v7H4zM7 19v2M17 19v2" />
-      </>
-    ),
-    drink: (
-      <>
-        <path d="M6 5h10v8a5 5 0 0 1-10 0V5Z" />
-        <path d="M16 8h2a3 3 0 0 1 0 6h-2M8 2v1M12 2v1" />
-        <path d="M5 21h12" />
-      </>
-    ),
-    products: (
-      <>
-        <path d="M9 3h6v4H9zM8 7h8l2 4v10H6V11l2-4Z" />
-        <path d="M9 14h6M12 11v6" />
       </>
     ),
     location: (
@@ -67,33 +51,54 @@ function FeatureIcon({ name }: FeatureIconProps) {
   );
 }
 
+type DifferentialCardProps = Readonly<{
+  differential: Differential;
+  delayMs: number;
+}>;
+
+function DifferentialCard({ differential, delayMs }: DifferentialCardProps) {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLLIElement>();
+
+  return (
+    <li
+      ref={elementRef}
+      className={`scroll-reveal bg-background p-6 sm:p-7 ${hasBeenRevealed ? "is-visible" : ""}`}
+      style={{ transitionDelay: `${delayMs}ms` }}
+    >
+      <div className="grid size-12 place-items-center border border-accent/30 text-accent-strong">
+        <FeatureIcon name={differential.icon} />
+      </div>
+
+      <h3 className="mt-6 text-lg font-bold text-foreground uppercase">
+        {differential.title}
+      </h3>
+      <p className="mt-3 text-sm leading-6 text-muted">
+        {differential.description}
+      </p>
+    </li>
+  );
+}
+
 export function DifferentialsSection() {
+  const { elementRef, hasBeenRevealed } = useScrollReveal<HTMLDivElement>();
+
   return (
     <section
       id="diferenciais"
       aria-labelledby="differentials-title"
-      className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative py-16 sm:py-20 lg:py-24"
     >
-      <div
-        aria-hidden="true"
-        className="absolute top-0 right-0 -z-10 size-[32rem] translate-x-1/2 rounded-full bg-accent/5 blur-3xl"
-      />
-
       <Container className="grid gap-10 sm:gap-12 xl:grid-cols-[0.72fr_1.28fr] xl:gap-16">
-        <div className="xl:pt-4">
-          <p className="text-xs font-bold tracking-[0.24em] text-accent-strong uppercase">
-            Por que nos escolher?
-          </p>
+        <div
+          ref={elementRef}
+          className={`scroll-reveal xl:pt-4 ${hasBeenRevealed ? "is-visible" : ""}`}
+        >
           <h2
             id="differentials-title"
-            className="mt-4 max-w-lg font-display text-3xl leading-tight font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:text-5xl"
+            className="max-w-lg font-display text-3xl leading-tight text-foreground uppercase sm:text-4xl lg:text-5xl"
           >
-            Uma pausa na rotina feita do seu jeito.
+            Por que os clientes voltam
           </h2>
-          <p className="mt-6 max-w-lg text-base leading-7 text-muted">
-            Da recepção ao acabamento, cada escolha foi pensada para oferecer
-            conveniência, conforto e um atendimento genuinamente cuidadoso.
-          </p>
 
           <div
             aria-hidden="true"
@@ -101,23 +106,13 @@ export function DifferentialsSection() {
           />
         </div>
 
-        <ul className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">
-          {differentials.map((differential) => (
-            <li
+        <ul className="grid gap-px overflow-hidden border border-foreground/10 bg-foreground/10 sm:grid-cols-3">
+          {differentials.map((differential, index) => (
+            <DifferentialCard
               key={differential.title}
-              className="group bg-background p-6 transition-[background-color,box-shadow] duration-300 hover:bg-surface hover:shadow-[inset_0_1px_0_rgba(224,180,93,0.22)] motion-reduce:transition-none sm:p-7"
-            >
-              <div className="grid size-12 place-items-center border border-accent/30 text-accent-strong transition-colors group-hover:border-accent">
-                <FeatureIcon name={differential.icon} />
-              </div>
-
-              <h3 className="mt-6 font-display text-xl font-semibold text-foreground">
-                {differential.title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                {differential.description}
-              </p>
-            </li>
+              differential={differential}
+              delayMs={index * 70}
+            />
           ))}
         </ul>
       </Container>

@@ -1,18 +1,20 @@
-# Prime Barber Landing Page
+# Barbearia do Kelvin — Landing Page
 
-Landing page one-page para a barbearia fictícia **Prime Barber**, desenvolvida com foco em apresentação comercial, responsividade, performance e conversão por WhatsApp.
+**Status:** projeto concluído, pronto para publicação.
 
-O projeto simula a presença digital de uma barbearia premium, apresentando serviços, diferenciais, depoimentos, galeria, localização e horários de funcionamento em uma interface moderna, elegante e acessível.
+Landing page one-page para a **Barbearia do Kelvin**, barbearia fictícia de bairro no Centro de Castanhal (PA), desenvolvida como peça de portfólio comercial para venda de sites a pequenos negócios.
+
+O projeto foi propositalmente redesenhado a partir de um template genérico de barbearia "premium" para ter identidade de bairro: texto informal em português, paleta de couro (marrom, creme e latão), tipografia condensada nos títulos de seção lembrando placa pintada, e a lista de serviços tratada como cardápio de parede — o elemento de assinatura da página.
 
 ## Preview
 
 > https://barber-landing-page-rosy.vercel.app/
 
+O projeto usa o domínio gratuito gerado pela Vercel, sem domínio próprio. Para a imagem Open Graph ser referenciada corretamente, defina a variável de ambiente `NEXT_PUBLIC_SITE_URL` no painel da Vercel com essa mesma URL.
+
 ## Objetivo
 
-Criar uma landing page moderna e responsiva para servir como projeto de portfólio e exemplo comercial de página institucional para pequenos negócios.
-
-A proposta principal da página é incentivar o visitante a entrar em contato pelo WhatsApp para agendar um horário.
+Servir como projeto de portfólio e exemplo comercial de página institucional para um pequeno negócio local, incentivando o visitante a entrar em contato pelo WhatsApp para agendar um horário ou simplesmente chegar e esperar a vez.
 
 ## Tecnologias utilizadas
 
@@ -20,22 +22,25 @@ A proposta principal da página é incentivar o visitante a entrar em contato pe
 * React
 * TypeScript
 * Tailwind CSS
+* `next/font` (Google Fonts: Anton e Archivo)
+* `next/og` para geração da imagem Open Graph
 * HTML semântico
 
 ## Funcionalidades
 
 * Layout responsivo para celular, tablet e desktop
+* Barra de demonstração fixa no topo, específica deste projeto de portfólio (ver seção "Projeto demonstrativo")
 * CTA principal direcionado ao WhatsApp
 * Botão flutuante de WhatsApp
-* Seção de serviços com preços e duração média
-* Seção de diferenciais da barbearia
-* Seção de experiência do cliente
-* Depoimentos com avaliações fictícias de cinco estrelas
-* Galeria visual com imagens otimizadas
-* Localização com mapa incorporado
-* Horários de funcionamento
+* Seção "Serviços e preços" com tratamento de placa de parede e cada linha como link clicável que abre o WhatsApp com mensagem já preenchida para aquele serviço
+* Seção de diferenciais do negócio
+* Seção com os barbeiros que atendem
+* Depoimentos com textos de tamanhos variados, sem avaliação por estrelas
+* Galeria de fotos em mosaico que se ajusta a qualquer quantidade de imagens, sem deixar buracos no grid, com leve zoom ao passar o mouse
+* Animação sutil de entrada por scroll nas seções de conteúdo, respeitando `prefers-reduced-motion`
+* Localização com mapa incorporado e horários de funcionamento
+* Imagem Open Graph gerada dinamicamente a partir do conteúdo do site
 * Footer com navegação rápida e redes sociais
-* Metadata básica para SEO
 * Conteúdo centralizado em arquivos de configuração
 
 ## Como executar localmente
@@ -131,14 +136,14 @@ src/config/site.ts
 
 Nesse arquivo é possível alterar:
 
-* nome da barbearia;
+* nome e iniciais da barbearia;
 * título e descrição do site;
-* número do WhatsApp;
-* mensagem padrão do WhatsApp;
-* endereço;
-* link do Google Maps;
+* número do WhatsApp da barbearia e mensagem padrão;
+* linha de apresentação do footer;
+* endereço, referência de localização e link do Google Maps;
 * horários de funcionamento;
-* links de redes sociais.
+* links de redes sociais;
+* texto e número de WhatsApp da barra de demonstração (`demoBarContent` e `demoWhatsappUrl`).
 
 O número do WhatsApp deve incluir o código do país e o DDD, usando somente dígitos.
 
@@ -147,6 +152,8 @@ Exemplo:
 ```txt
 5591999999999
 ```
+
+> **Atenção:** o número de WhatsApp da barra de demonstração (`demoWhatsappUrl`) é separado do número da barbearia (`whatsappUrl`) — o primeiro leva a quem vende o site, o segundo leva ao negócio. Se este template for reaproveitado para um cliente real, remova o componente `DemoBar` (`src/components/ui/demo-bar.tsx`) e sua importação em `src/app/page.tsx`.
 
 ### Conteúdo das seções
 
@@ -158,38 +165,45 @@ src/config/content.ts
 
 Nesse arquivo é possível alterar:
 
-* serviços;
-* descrições;
-* preços;
-* duração média dos serviços;
+* título e subtítulo do hero;
+* serviços, preços e duração;
 * diferenciais;
-* textos da seção de experiência;
+* barbeiros que atendem;
 * depoimentos;
-* itens da galeria.
+* imagens da galeria.
+
+### Imagens
+
+As imagens usadas nas seções ficam em `public/images`. Para trocar uma foto, substitua o arquivo mantendo o mesmo nome — os componentes não dependem de proporção específica de imagem.
 
 ## Estrutura principal do projeto
 
 ```txt
 src/
 ├── app/
+│   ├── opengraph-image.tsx
+│   └── ...
 ├── components/
 │   ├── layout/
 │   ├── sections/
 │   └── ui/
-└── config/
-    ├── content.ts
-    └── site.ts
+├── config/
+│   ├── content.ts
+│   └── site.ts
+└── hooks/
+    └── use-scroll-reveal.ts
 ```
 
 ## Organização do código
 
 O projeto foi organizado para manter a landing page simples, reutilizável e fácil de editar.
 
-* `src/app`: estrutura principal do App Router.
+* `src/app`: estrutura principal do App Router, incluindo a geração da imagem Open Graph.
 * `src/components/layout`: componentes estruturais da página.
 * `src/components/sections`: seções principais da landing page.
 * `src/components/ui`: componentes reutilizáveis de interface.
 * `src/config`: dados editáveis usados nas seções.
+* `src/hooks`: hooks reutilizáveis, como o de animação de entrada por scroll.
 
 ## Projeto demonstrativo
 
@@ -199,10 +213,6 @@ Os nomes, depoimentos, preços, contatos, endereços e demais informações exib
 
 ## Melhorias futuras
 
-* Publicar o projeto na Vercel
-* Adicionar link de demonstração online no README
-* Adicionar imagem Open Graph para compartilhamento em redes sociais
-* Melhorar microinterações sem comprometer a performance
 * Adicionar testes automatizados de acessibilidade
 * Integrar métricas de acesso e conversão respeitando privacidade e consentimento
 * Conectar o agendamento a um serviço externo caso o projeto evolua para uso real

@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090908;
-  --surface: #151411;
-  --surface-elevated: #1d1b17;
-  --foreground: #f5f0e6;
-  --muted: #aaa294;
-  --subtle: #898276;
-  --border: #302d27;
-  --accent: #c8943f;
-  --accent-strong: #e0b45d;
-  --accent-foreground: #171006;
+  --background: #3a2a21;
+  --surface: #564840;
+  --surface-elevated: #6d615b;
+  --surface-sunken: #2e2019;
+  --foreground: #efe7d8;
+  --muted: #c2c0b9;
+  --subtle: #bdbbb3;
+  --border: #4a3b33;
+  --accent: #c08a2e;
+  --accent-strong: #d9a347;
+  --accent-foreground: #14100d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sunken: var(--surface-sunken);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-subtle: var(--subtle);
@@ -24,8 +26,8 @@
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-display: Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-body-family), Arial, Helvetica, sans-serif;
+  --font-display: var(--font-display-family), Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -35,21 +37,15 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 7rem;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(
-      circle at 50% -10%,
-      rgb(200 148 63 / 12%),
-      transparent 30rem
-    ),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
 }
 
@@ -93,11 +89,57 @@ button {
 
 .whatsapp-cta:hover {
   transform: translateY(-0.125rem);
-  box-shadow: 0 14px 38px rgb(200 148 63 / 22%);
+  box-shadow: 0 14px 38px rgb(192 138 46 / 22%);
 }
 
 .whatsapp-cta:active {
   transform: translateY(0);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 400ms ease-out,
+    transform 400ms ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-photo {
+  transition: transform 350ms ease-out;
+}
+
+.gallery-photo:hover {
+  transform: scale(1.04);
+}
+
+.price-row {
+  transition:
+    background-color 200ms ease,
+    transform 150ms ease;
+}
+
+.price-row:hover,
+.price-row:focus-visible {
+  background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+.price-row:active {
+  transform: scale(0.98);
+}
+
+.price-row-name {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.price-row:hover .price-row-name,
+.price-row:focus-visible .price-row-name {
+  transform: translateX(4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -115,6 +157,44 @@ button {
 
   .whatsapp-cta:hover,
   .whatsapp-cta:active {
+    transform: none;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .gallery-photo {
+    transition: none;
+  }
+
+  .gallery-photo:hover {
+    transform: none;
+  }
+
+  .price-row {
+    transition: background-color 200ms ease;
+  }
+
+  .price-row:active {
+    transform: none;
+  }
+
+  .price-row-name {
+    transition: none;
+  }
+
+  .price-row:hover .price-row-name,
+  .price-row:focus-visible .price-row-name {
+    transform: none;
+  }
+}
+
+@media (scripting: none) {
+  .scroll-reveal {
+    opacity: 1;
     transform: none;
   }
 }
