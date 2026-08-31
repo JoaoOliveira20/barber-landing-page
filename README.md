@@ -1,6 +1,6 @@
 # Barbearia do Kelvin — Landing Page
 
-**Status:** projeto concluído, pronto para publicação.
+**Status:** concluído e publicado.
 
 Landing page one-page para a **Barbearia do Kelvin**, barbearia fictícia de bairro no Centro de Castanhal (PA), desenvolvida como peça de portfólio comercial para venda de sites a pequenos negócios.
 
@@ -10,7 +10,7 @@ O projeto foi propositalmente redesenhado a partir de um template genérico de b
 
 > https://barber-landing-page-rosy.vercel.app/
 
-O projeto usa o domínio gratuito gerado pela Vercel, sem domínio próprio. Para a imagem Open Graph ser referenciada corretamente, defina a variável de ambiente `NEXT_PUBLIC_SITE_URL` no painel da Vercel com essa mesma URL.
+O projeto usa o domínio gratuito gerado pela Vercel, sem domínio próprio. A URL de produção é detectada automaticamente (via `VERCEL_PROJECT_PRODUCTION_URL`) para gerar a imagem Open Graph corretamente, sem precisar configurar nada manualmente. Só defina a variável de ambiente `NEXT_PUBLIC_SITE_URL` no painel da Vercel se o projeto passar a usar um domínio próprio.
 
 ## Objetivo
 

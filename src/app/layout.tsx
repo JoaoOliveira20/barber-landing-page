@@ -6,6 +6,13 @@ import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
+const productionSiteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : undefined;
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? productionSiteUrl ?? "http://localhost:3000";
+
 const bodyFont = Archivo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -21,9 +28,7 @@ const displayFont = Anton({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  metadataBase: new URL(siteUrl),
   title: siteConfig.title,
   description: siteConfig.description,
   applicationName: siteConfig.name,
