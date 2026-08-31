@@ -16,7 +16,7 @@ export const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComp
   whatsappMessage,
 )}`;
 
-const demoWhatsappNumber = "SEU_NUMERO";
+const demoWhatsappNumber = "5591987272395";
 const demoWhatsappMessage =
   "Olá João, vi o site demonstrativo da barbearia e queria um orçamento";
 
