@@ -13,6 +13,13 @@ type FeatureIconProps = Readonly<{
 
 function FeatureIcon({ name }: FeatureIconProps) {
   const paths: Record<DifferentialIcon, ReactNode> = {
+    breeze: (
+      <>
+        <path d="M3 8h10a2.5 2.5 0 1 0-2.5-2.5" />
+        <path d="M3 12h14a2.5 2.5 0 1 1-2.5 2.5" />
+        <path d="M3 16h7a2 2 0 1 0-2-2" />
+      </>
+    ),
     calendar: (
       <>
         <path d="M7 3v3M17 3v3M4 9h16" />
