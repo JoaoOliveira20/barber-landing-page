@@ -24,6 +24,12 @@ export const demoWhatsappUrl = `https://wa.me/${demoWhatsappNumber}?text=${encod
   demoWhatsappMessage,
 )}`;
 
+export const demoBarContent = {
+  label: "Projeto demonstrativo",
+  author: "Site feito por João Pedro",
+  ctaLabel: "Quero um assim",
+} as const;
+
 export type NavigationLink = Readonly<{
   label: string;
   href: `#${string}`;

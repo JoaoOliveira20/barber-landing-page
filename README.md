@@ -27,13 +27,15 @@ Servir como projeto de portfólio e exemplo comercial de página institucional p
 ## Funcionalidades
 
 * Layout responsivo para celular, tablet e desktop
+* Barra de demonstração fixa no topo, específica deste projeto de portfólio (ver seção "Projeto demonstrativo")
 * CTA principal direcionado ao WhatsApp
 * Botão flutuante de WhatsApp
-* Seção "Serviços e preços" com tratamento de placa de parede
+* Seção "Serviços e preços" com tratamento de placa de parede e cada linha como link clicável que abre o WhatsApp com mensagem já preenchida para aquele serviço
 * Seção de diferenciais do negócio
 * Seção com os barbeiros que atendem
 * Depoimentos com textos de tamanhos variados, sem avaliação por estrelas
-* Galeria de fotos em mosaico que se ajusta a qualquer quantidade de imagens, sem deixar buracos no grid
+* Galeria de fotos em mosaico que se ajusta a qualquer quantidade de imagens, sem deixar buracos no grid, com leve zoom ao passar o mouse
+* Animação sutil de entrada por scroll nas seções de conteúdo, respeitando `prefers-reduced-motion`
 * Localização com mapa incorporado e horários de funcionamento
 * Imagem Open Graph gerada dinamicamente a partir do conteúdo do site
 * Footer com navegação rápida e redes sociais
@@ -138,7 +140,8 @@ Nesse arquivo é possível alterar:
 * linha de apresentação do footer;
 * endereço, referência de localização e link do Google Maps;
 * horários de funcionamento;
-* links de redes sociais.
+* links de redes sociais;
+* texto e número de WhatsApp da barra de demonstração (`demoBarContent` e `demoWhatsappUrl`).
 
 O número do WhatsApp deve incluir o código do país e o DDD, usando somente dígitos.
 
@@ -147,6 +150,8 @@ Exemplo:
 ```txt
 5591999999999
 ```
+
+> **Atenção:** o número de WhatsApp da barra de demonstração (`demoWhatsappUrl`) é separado do número da barbearia (`whatsappUrl`) — o primeiro leva a quem vende o site, o segundo leva ao negócio. Se este template for reaproveitado para um cliente real, remova o componente `DemoBar` (`src/components/ui/demo-bar.tsx`) e sua importação em `src/app/page.tsx`.
 
 ### Conteúdo das seções
 
@@ -180,9 +185,11 @@ src/
 │   ├── layout/
 │   ├── sections/
 │   └── ui/
-└── config/
-    ├── content.ts
-    └── site.ts
+├── config/
+│   ├── content.ts
+│   └── site.ts
+└── hooks/
+    └── use-scroll-reveal.ts
 ```
 
 ## Organização do código
@@ -194,6 +201,7 @@ O projeto foi organizado para manter a landing page simples, reutilizável e fá
 * `src/components/sections`: seções principais da landing page.
 * `src/components/ui`: componentes reutilizáveis de interface.
 * `src/config`: dados editáveis usados nas seções.
+* `src/hooks`: hooks reutilizáveis, como o de animação de entrada por scroll.
 
 ## Projeto demonstrativo
 
