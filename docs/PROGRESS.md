@@ -36,7 +36,7 @@ fica `[~]` com uma linha dizendo o que falta.
 - [x] **Barbeiros** — Kelvin e Rafael, foto + nome + citação + link
       "Agendar c/ [nome]". Placeholder de foto com aspect-ratio fixo.
       Arquivos: `src/components/sections/barbers-section.tsx`.
-- [ ] **Galeria** — grade no desktop, faixa com scroll horizontal por
+- [x] **Galeria** — grade no desktop, faixa com scroll horizontal por
       toque no mobile. Placeholder de foto com aspect-ratio fixo.
       Arquivos: `src/components/sections/gallery-section.tsx`.
 - [ ] **Depoimentos** — 3 cards com estrelas, citação, nome e tempo de
@@ -79,5 +79,8 @@ fica `[~]` com uma linha dizendo o que falta.
 
 - Número de WhatsApp é placeholder (`5591999999999`) — trocar antes de
   publicar.
-- Fotos reais de barbeiros, galeria e mapa ainda não existem — usando
-  placeholder com aspect-ratio fixo até serem fornecidas.
+- Fotos reais de galeria e mapa ainda não existem — usando placeholder
+  com aspect-ratio fixo até serem fornecidas. Barbeiros e hero já usam
+  fotos reais (`references/photos/`), copiadas para `public/images/`.
+- Galeria no print tem 5 fotos (bento: 1 larga + 1 média na primeira
+  linha, 3 iguais na segunda), não 6 — corrigido em `content.ts`.

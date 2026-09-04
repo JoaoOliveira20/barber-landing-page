@@ -131,7 +131,11 @@ export const barbers: readonly Barber[] = [
   },
 ];
 
-export const galleryPlaceholderCount = 6;
+export const galleryIntro = {
+  title: "O dia a dia no centro",
+};
+
+export const galleryPlaceholderCount = 5;
 
 export type Testimonial = Readonly<{
   name: string;
