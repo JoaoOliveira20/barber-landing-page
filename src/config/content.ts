@@ -101,6 +101,12 @@ export const whyHereReasons: readonly WhyHereReason[] = [
   },
 ];
 
+export const barbersIntro = {
+  title: "Quem cuida do seu corte",
+  subtitle:
+    "Profissionais experientes que conhecem o formato do seu rosto e o estilo que você gosta.",
+} as const;
+
 export type Barber = Readonly<{
   name: string;
   quote: string;

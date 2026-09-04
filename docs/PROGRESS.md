@@ -33,7 +33,7 @@ fica `[~]` com uma linha dizendo o que falta.
 - [x] **Por que aqui** — 3 colunas (Preço justo, Atendimento de verdade,
       Corte bem feito) com ícone, título, texto e legenda em itálico.
       Arquivos: `src/components/sections/why-here-section.tsx`.
-- [ ] **Barbeiros** — Kelvin e Rafael, foto + nome + citação + link
+- [x] **Barbeiros** — Kelvin e Rafael, foto + nome + citação + link
       "Agendar c/ [nome]". Placeholder de foto com aspect-ratio fixo.
       Arquivos: `src/components/sections/barbers-section.tsx`.
 - [ ] **Galeria** — grade no desktop, faixa com scroll horizontal por
