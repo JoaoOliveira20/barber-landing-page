@@ -5,6 +5,7 @@ import { PriceBoard } from "@/components/sections/price-board";
 import { WhyHereSection } from "@/components/sections/why-here-section";
 import { BarbersSection } from "@/components/sections/barbers-section";
 import { GallerySection } from "@/components/sections/gallery-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <WhyHereSection />
         <BarbersSection />
         <GallerySection />
+        <TestimonialsSection />
       </main>
     </>
   );

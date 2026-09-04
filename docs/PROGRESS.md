@@ -39,7 +39,7 @@ fica `[~]` com uma linha dizendo o que falta.
 - [x] **Galeria** — grade no desktop, faixa com scroll horizontal por
       toque no mobile. Placeholder de foto com aspect-ratio fixo.
       Arquivos: `src/components/sections/gallery-section.tsx`.
-- [ ] **Depoimentos** — 3 cards com estrelas, citação, nome e tempo de
+- [x] **Depoimentos** — 3 cards com estrelas, citação, nome e tempo de
       cliente. Arquivos: `src/components/sections/testimonials-section.tsx`.
 - [ ] **Onde ficamos** — endereço, horário, ponto de referência, botão
       "Como chegar", mapa estático que só carrega iframe após clique.
