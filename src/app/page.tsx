@@ -9,6 +9,7 @@ import { GallerySection } from "@/components/sections/gallery-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { LocationSection } from "@/components/sections/location-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
+import { FloatingWhatsapp } from "@/components/ui/floating-whatsapp";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <FinalCtaSection />
       </main>
       <SiteFooter />
+      <FloatingWhatsapp />
     </>
   );
 }

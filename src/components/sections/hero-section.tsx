@@ -36,6 +36,7 @@ export function HeroSection() {
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
+              id="hero-whatsapp-cta"
               href={heroContent.primaryCtaUrl}
               target="_blank"
               rel="noopener noreferrer"

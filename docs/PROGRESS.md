@@ -49,7 +49,7 @@ fica `[~]` com uma linha dizendo o que falta.
       de contato/horário, aviso "Projeto demonstrativo — Barbearia
       fictícia", padding-bottom para a barra fixa mobile não cobrir
       conteúdo. Arquivos: `src/components/layout/site-footer.tsx`.
-- [ ] **Botão flutuante de WhatsApp** — pílula fixa desktop (só após o
+- [x] **Botão flutuante de WhatsApp** — pílula fixa desktop (só após o
       botão do hero sair da tela, via `IntersectionObserver`), barra fixa
       de largura total no mobile. Arquivos:
       `src/components/ui/floating-whatsapp.tsx` (client).
@@ -74,6 +74,10 @@ fica `[~]` com uma linha dizendo o que falta.
   (uma regra nova não aparecia no bundle compilado). Se um estilo novo
   não aparecer depois de editar `globals.css`, matar o processo, apagar
   `.next` e reiniciar `npm run dev` antes de desconfiar do CSS em si.
+- Elemento `position: fixed` só aparece certo no truque do iframe se a
+  altura do iframe bater com a altura real do viewport (ex.: 812 para
+  mobile) — um iframe "alto" pra caber a página inteira faz o fixed
+  grudar no fim do iframe inteiro, não no fim da tela visível.
 
 ## Pendências / dúvidas
 
