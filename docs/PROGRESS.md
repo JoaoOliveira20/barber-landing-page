@@ -14,7 +14,7 @@ fica `[~]` com uma linha dizendo o que falta.
       títulos, corpo), espaçamento entre seções (72px mobile / 128px
       desktop), container, reset. Arquivos: `src/app/globals.css`,
       `src/app/layout.tsx`, `src/config/site.ts`.
-- [ ] **Header** — wordmark (baseado em `references/logo-wordmark.svg`),
+- [x] **Header** — wordmark (baseado em `references/logo-wordmark.svg`),
       nav desktop, botão vermelho "Agendar pelo WhatsApp", menu recolhido
       no mobile (sem botão de WhatsApp no header mobile). Arquivos:
       `src/components/layout/site-header.tsx`,
