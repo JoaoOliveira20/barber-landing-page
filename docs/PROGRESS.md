@@ -30,7 +30,7 @@ fica `[~]` com uma linha dizendo o que falta.
       pontilhada, tag "MAIS PEDIDO" no combo, nota de pagamento; no
       mobile nome e preço na mesma linha. Reveal ao rolar no título e na
       tabela. Arquivos: `src/components/sections/price-board.tsx`.
-- [ ] **Por que aqui** — 3 colunas (Preço justo, Atendimento de verdade,
+- [x] **Por que aqui** — 3 colunas (Preço justo, Atendimento de verdade,
       Corte bem feito) com ícone, título, texto e legenda em itálico.
       Arquivos: `src/components/sections/why-here-section.tsx`.
 - [ ] **Barbeiros** — Kelvin e Rafael, foto + nome + citação + link
