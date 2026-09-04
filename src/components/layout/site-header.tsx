@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { Container } from "@/components/layout/container";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Wordmark } from "@/components/ui/wordmark";
 import { navigationLinks, whatsappUrl } from "@/config/site";
@@ -8,7 +7,7 @@ import { navigationLinks, whatsappUrl } from "@/config/site";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-tinta">
-      <Container className="relative flex h-16 items-center justify-between lg:h-20">
+      <div className="relative flex h-16 items-center justify-between px-4 lg:h-20 lg:px-10">
         <Link href="#" aria-label="Barbearia do Kelvin, início">
           <Wordmark />
         </Link>
@@ -36,7 +35,7 @@ export function SiteHeader() {
         </a>
 
         <MobileNav />
-      </Container>
+      </div>
     </header>
   );
 }

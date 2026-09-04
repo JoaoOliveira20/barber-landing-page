@@ -1,12 +1,11 @@
 import Image from "next/image";
 
-import { Container } from "@/components/layout/container";
 import { heroContent } from "@/config/content";
 
 export function HeroSection() {
   return (
     <section className="section pt-12 lg:pt-20">
-      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
+      <div className="container-hero grid items-stretch gap-12 lg:grid-cols-2 lg:gap-10">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-3.5 w-5 flex-col overflow-hidden">
@@ -55,8 +54,8 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div>
-          <div className="relative aspect-[12/11] w-full overflow-hidden">
+        <div className="flex flex-col">
+          <div className="relative w-full flex-1 aspect-[4/3] overflow-hidden lg:aspect-auto">
             <Image
               src="/images/hero-barbearia.png"
               alt="Cliente sendo atendido na Barbearia do Kelvin"
@@ -70,7 +69,7 @@ export function HeroSection() {
             {heroContent.photoCaption}
           </p>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

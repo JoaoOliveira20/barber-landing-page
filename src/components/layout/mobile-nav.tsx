@@ -31,7 +31,7 @@ export function MobileNav() {
           id="mobile-nav-panel"
           className="absolute inset-x-0 top-full border-t border-papel/10 bg-tinta"
         >
-          <nav className="container flex flex-col py-4">
+          <nav className="flex flex-col px-4 py-4">
             {navigationLinks.map((link) => (
               <a
                 key={link.href}
