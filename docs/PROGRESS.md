@@ -19,7 +19,7 @@ fica `[~]` com uma linha dizendo o que falta.
       no mobile (sem botão de WhatsApp no header mobile). Arquivos:
       `src/components/layout/site-header.tsx`,
       `src/components/layout/mobile-nav.tsx` (client).
-- [ ] **Hero** — selo, título com "Sem frescura" em mostarda, subtítulo,
+- [x] **Hero** — selo, título com "Sem frescura" em mostarda, subtítulo,
       botão primário (WhatsApp) + secundário (âncora para preços), foto
       com `next/image priority` e legenda de endereço sobreposta.
       Arquivos: `src/components/sections/hero-section.tsx`.
