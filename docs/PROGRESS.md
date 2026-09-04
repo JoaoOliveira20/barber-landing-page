@@ -26,7 +26,7 @@ fica `[~]` com uma linha dizendo o que falta.
 - [x] **Faixa de três fatos** — endereço, horário, agendamento fácil, com
       ícone, em faixa azul-escura logo abaixo do hero. Arquivos:
       `src/components/sections/facts-strip.tsx`.
-- [ ] **Tabela de preços** — cartão de borda fina, 5 serviços com linha
+- [x] **Tabela de preços** — cartão de borda fina, 5 serviços com linha
       pontilhada, tag "MAIS PEDIDO" no combo, nota de pagamento; no
       mobile nome e preço na mesma linha. Reveal ao rolar no título e na
       tabela. Arquivos: `src/components/sections/price-board.tsx`.
@@ -62,6 +62,18 @@ fica `[~]` com uma linha dizendo o que falta.
       corretos em toda imagem, iframe do Maps só após clique, Lighthouse
       mobile (meta: 100 Performance e SEO). Sem arquivo novo — ajustes no
       que já existe.
+
+## Notas de processo
+
+- `resize_window` do Claude in Chrome não muda o viewport real neste
+  ambiente (fica preso na resolução do monitor). Para conferir 1280px
+  desktop e 375px mobile, uso um servidor node local (porta 3002) que
+  serve um `<iframe>` com `width` exata apontando pro dev server — dá
+  viewport confiável sem depender de resize de janela.
+- O dev server (Turbopack) já deixou CSS em cache desatualizado uma vez
+  (uma regra nova não aparecia no bundle compilado). Se um estilo novo
+  não aparecer depois de editar `globals.css`, matar o processo, apagar
+  `.next` e reiniciar `npm run dev` antes de desconfiar do CSS em si.
 
 ## Pendências / dúvidas
 
