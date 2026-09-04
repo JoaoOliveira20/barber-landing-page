@@ -11,7 +11,6 @@ export function FloatingWhatsapp() {
   useEffect(() => {
     const heroCta = document.getElementById("hero-whatsapp-cta");
     if (!heroCta) {
-      setIsHeroCtaHidden(true);
       return;
     }
 

@@ -58,7 +58,7 @@ fica `[~]` com uma linha dizendo o que falta.
       preços (reveal), com fallback `@supports` e respeito a
       `prefers-reduced-motion`. Sem listener de scroll em JS. Arquivos:
       `src/app/globals.css`.
-- [ ] **Passada de performance** — checar `next/image` com `sizes`
+- [x] **Passada de performance** — checar `next/image` com `sizes`
       corretos em toda imagem, iframe do Maps só após clique, Lighthouse
       mobile (meta: 100 Performance e SEO). Sem arquivo novo — ajustes no
       que já existe.
@@ -78,6 +78,16 @@ fica `[~]` com uma linha dizendo o que falta.
   altura do iframe bater com a altura real do viewport (ex.: 812 para
   mobile) — um iframe "alto" pra caber a página inteira faz o fixed
   grudar no fim do iframe inteiro, não no fim da tela visível.
+
+## Resultado da passada de performance
+
+- `npm run build` e `npm run lint` limpos.
+- Lighthouse mobile (via `npx lighthouse`, simulado) no build de
+  produção local: **Performance 99, SEO 100**. LCP ~2.0s é o único
+  ponto abaixo do ideal, ligado à foto do hero (praticamente no teto
+  para uma página com foto real de herói).
+- Google Maps confirmado: nenhum request de iframe do Maps antes do
+  clique em "Ver mapa interativo".
 
 ## Pendências / dúvidas
 
