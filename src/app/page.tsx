@@ -6,6 +6,7 @@ import { WhyHereSection } from "@/components/sections/why-here-section";
 import { BarbersSection } from "@/components/sections/barbers-section";
 import { GallerySection } from "@/components/sections/gallery-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { LocationSection } from "@/components/sections/location-section";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <BarbersSection />
         <GallerySection />
         <TestimonialsSection />
+        <LocationSection />
       </main>
     </>
   );

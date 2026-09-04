@@ -41,7 +41,7 @@ fica `[~]` com uma linha dizendo o que falta.
       Arquivos: `src/components/sections/gallery-section.tsx`.
 - [x] **Depoimentos** — 3 cards com estrelas, citação, nome e tempo de
       cliente. Arquivos: `src/components/sections/testimonials-section.tsx`.
-- [ ] **Onde ficamos** — endereço, horário, ponto de referência, botão
+- [x] **Onde ficamos** — endereço, horário, ponto de referência, botão
       "Como chegar", mapa estático que só carrega iframe após clique.
       Arquivos: `src/components/sections/location-section.tsx`,
       `src/components/ui/static-map.tsx` (client).
