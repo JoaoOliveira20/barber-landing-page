@@ -176,7 +176,8 @@ export const finalCta = {
 } as const;
 
 export const footerContent = {
+  location: "Centro de Castanhal — PA",
   tagline:
-    "Barbearia do Kelvin — Corte clássico, navalha afiada e tradição de bairro no coração do Pará.",
+    "Corte clássico, navalha afiada e tradição de bairro no coração do Pará.",
   copyright: "© 2026 Barbearia do Kelvin. Todos os direitos reservados.",
 } as const;

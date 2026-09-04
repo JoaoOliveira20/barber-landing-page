@@ -45,7 +45,7 @@ fica `[~]` com uma linha dizendo o que falta.
       "Como chegar", mapa estático que só carrega iframe após clique.
       Arquivos: `src/components/sections/location-section.tsx`,
       `src/components/ui/static-map.tsx` (client).
-- [ ] **Rodapé** — CTA final ("Seu próximo corte começa aqui"), colunas
+- [x] **Rodapé** — CTA final ("Seu próximo corte começa aqui"), colunas
       de contato/horário, aviso "Projeto demonstrativo — Barbearia
       fictícia", padding-bottom para a barra fixa mobile não cobrir
       conteúdo. Arquivos: `src/components/layout/site-footer.tsx`.
@@ -82,5 +82,9 @@ fica `[~]` com uma linha dizendo o que falta.
 - Fotos reais de galeria e mapa ainda não existem — usando placeholder
   com aspect-ratio fixo até serem fornecidas. Barbeiros e hero já usam
   fotos reais (`references/photos/`), copiadas para `public/images/`.
+- O rodapé do print mostra "Sábado: 08h às 18h", divergindo de
+  `docs/content.md` e do resto do site (08h às 17h). Segui
+  `content.md` no rodapé (dado factual, não detalhe visual) — sinalizar
+  ao usuário.
 - Galeria no print tem 5 fotos (bento: 1 larga + 1 média na primeira
   linha, 3 iguais na segunda), não 6 — corrigido em `content.ts`.
