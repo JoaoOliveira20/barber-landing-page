@@ -20,8 +20,8 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           padding: "72px",
-          backgroundColor: "#3A2A21",
-          color: "#EFE7D8",
+          backgroundColor: "#14293F",
+          color: "#EDE6D6",
           fontFamily: "sans-serif",
         }}
       >
@@ -39,13 +39,13 @@ export default function OpengraphImage() {
               justifyContent: "center",
               width: "76px",
               height: "76px",
-              border: "3px solid #C08A2E",
-              color: "#C08A2E",
+              border: "3px solid #C0342B",
+              color: "#C0342B",
               fontSize: "30px",
               fontWeight: 700,
             }}
           >
-            {siteConfig.initials}
+            BK
           </div>
           <div
             style={{
@@ -67,14 +67,14 @@ export default function OpengraphImage() {
             maxWidth: "980px",
           }}
         >
-          {heroContent.title}
+          {heroContent.titleLines.join(" ")}
         </div>
 
         <div
           style={{
             marginTop: "32px",
             fontSize: "26px",
-            color: "#C2C0B9",
+            color: "#c2c0b9",
             maxWidth: "820px",
             lineHeight: 1.5,
           }}
@@ -90,11 +90,11 @@ export default function OpengraphImage() {
             gap: "16px",
             fontSize: "26px",
             fontWeight: 700,
-            color: "#C08A2E",
+            color: "#C0342B",
           }}
         >
           <div
-            style={{ width: "48px", height: "3px", backgroundColor: "#C08A2E" }}
+            style={{ width: "48px", height: "3px", backgroundColor: "#C0342B" }}
           />
           {heroContent.primaryCtaLabel}
         </div>

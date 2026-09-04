@@ -1,33 +1,12 @@
-import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
-import { BarbersSection } from "@/components/sections/barbers-section";
-import { DifferentialsSection } from "@/components/sections/differentials-section";
-import { GallerySection } from "@/components/sections/gallery-section";
-import { HeroSection } from "@/components/sections/hero-section";
-import { LocationSection } from "@/components/sections/location-section";
-import { ServicesSection } from "@/components/sections/services-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { DemoBar } from "@/components/ui/demo-bar";
-import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
+import { Container } from "@/components/layout/container";
 
 export default function Home() {
   return (
-    <>
-      <DemoBar />
-      <SiteHeader />
-
-      <main className="page-enter">
-        <HeroSection />
-        <ServicesSection />
-        <DifferentialsSection />
-        <BarbersSection />
-        <TestimonialsSection />
-        <GallerySection />
-        <LocationSection />
-      </main>
-
-      <SiteFooter />
-      <FloatingWhatsApp />
-    </>
+    <main>
+      <Container className="section">
+        <h1 className="section-title">Barbearia do Kelvin</h1>
+        <p>Fundação em construção.</p>
+      </Container>
+    </main>
   );
 }

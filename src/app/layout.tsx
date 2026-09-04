@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Archivo } from "next/font/google";
+import { Bevan, Libre_Franklin } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
@@ -13,17 +13,17 @@ const productionSiteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? productionSiteUrl ?? "http://localhost:3000";
 
-const bodyFont = Archivo({
+const displayFont = Bevan({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body-family",
+  weight: "400",
+  variable: "--font-bevan",
   display: "swap",
 });
 
-const displayFont = Anton({
+const bodyFont = Libre_Franklin({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-display-family",
+  weight: ["400", "600", "700"],
+  variable: "--font-libre-franklin",
   display: "swap",
 });
 
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: "dark",
-  themeColor: "#3a2a21",
+  themeColor: "#14293f",
 };
 
 type RootLayoutProps = Readonly<{
@@ -61,8 +61,8 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt-BR" className={`${bodyFont.variable} ${displayFont.variable}`}>
-      <body className="antialiased">{children}</body>
+    <html lang="pt-BR" className={`${displayFont.variable} ${bodyFont.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

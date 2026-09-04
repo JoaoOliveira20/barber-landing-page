@@ -1,143 +1,50 @@
 export const siteConfig = {
   name: "Barbearia do Kelvin",
-  initials: "BK",
-  title: "Barbearia do Kelvin | Corte e barba no Centro de Castanhal",
+  title: "Barbearia do Kelvin | Centro de Castanhal",
   description:
-    "Corte, barba e pezinho de terça a domingo no Centro de Castanhal. Agende pelo WhatsApp ou chegue e espere a vez.",
+    "Corte, barba e pezinho no Centro de Castanhal. Preço justo, sem frescura. Agende pelo WhatsApp.",
 } as const;
-
-export const footerTagline =
-  "Barbearia de bairro no Centro de Castanhal. Corte, barba e pezinho de terça a domingo.";
 
 export const whatsappNumber = "5591999999999";
-const whatsappMessage = "Oi! Queria marcar um horário.";
 
-export const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-  whatsappMessage,
-)}`;
+export function buildWhatsappUrl(message: string) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
-const demoWhatsappNumber = "5591987272395";
-const demoWhatsappMessage =
-  "Olá João, vi o site demonstrativo da barbearia e queria um orçamento";
-
-export const demoWhatsappUrl = `https://wa.me/${demoWhatsappNumber}?text=${encodeURIComponent(
-  demoWhatsappMessage,
-)}`;
-
-export const demoBarContent = {
-  label: "Projeto demonstrativo",
-  author: "Site feito por João Pedro",
-  ctaLabel: "Quero um assim",
-} as const;
+export const whatsappUrl = buildWhatsappUrl(
+  "Olá Kelvin, gostaria de agendar um horário na barbearia",
+);
 
 export type NavigationLink = Readonly<{
   label: string;
   href: `#${string}`;
 }>;
 
-export const pageLinks = {
-  home: {
-    label: "Início",
-    href: "#inicio",
-  },
-  services: {
-    label: "Serviços",
-    href: "#servicos",
-  },
-  differentials: {
-    label: "Por que voltar",
-    href: "#diferenciais",
-  },
-  barbers: {
-    label: "Barbeiros",
-    href: "#barbeiros",
-  },
-  testimonials: {
-    label: "Depoimentos",
-    href: "#depoimentos",
-  },
-  gallery: {
-    label: "A barbearia",
-    href: "#galeria",
-  },
-  location: {
-    label: "Onde ficamos",
-    href: "#localizacao",
-  },
-} as const satisfies Record<string, NavigationLink>;
-
-export const navigationLinks = [
-  pageLinks.services,
-  pageLinks.barbers,
-  pageLinks.testimonials,
-  pageLinks.location,
-] as const satisfies readonly NavigationLink[];
-
-export const footerLinks = [
-  pageLinks.home,
-  pageLinks.services,
-  pageLinks.differentials,
-  pageLinks.barbers,
-  pageLinks.testimonials,
-  pageLinks.gallery,
-  pageLinks.location,
-] as const satisfies readonly NavigationLink[];
-
-export type BusinessHour = Readonly<{
-  days: string;
-  hours: string;
-}>;
-
-export const businessHours = [
-  {
-    days: "Segunda",
-    hours: "Fechado",
-  },
-  {
-    days: "Terça a sexta",
-    hours: "09h às 19h",
-  },
-  {
-    days: "Sábado",
-    hours: "08h às 20h",
-  },
-  {
-    days: "Domingo",
-    hours: "08h às 13h",
-  },
-] as const satisfies readonly BusinessHour[];
-
-export type SocialLink = Readonly<{
-  name: string;
-  url: string;
-}>;
-
-export const socialLinks = [
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com",
-  },
-  {
-    name: "Facebook",
-    url: "https://www.facebook.com",
-  },
-] as const satisfies readonly SocialLink[];
-
-const addressData = {
-  street: "Av. Barão do Rio Branco",
-  neighborhood: "Centro",
-  city: "Castanhal",
-  state: "PA",
-  reference: "Perto do cruzamento com a Av. Presidente Vargas",
-} as const;
-
-const mapsQuery = encodeURIComponent(
-  `${addressData.street} com Av. Presidente Vargas, ${addressData.neighborhood}, ${addressData.city} - ${addressData.state}`,
-);
+export const navigationLinks: readonly NavigationLink[] = [
+  { label: "Serviços", href: "#servicos" },
+  { label: "Barbeiros", href: "#barbeiros" },
+  { label: "Galeria", href: "#galeria" },
+  { label: "Onde ficamos", href: "#onde-ficamos" },
+];
 
 export const address = {
-  ...addressData,
-  full: `${addressData.street} — ${addressData.neighborhood}, ${addressData.city} — ${addressData.state}`,
-  mapsUrl: `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`,
-  mapsEmbedUrl: `https://www.google.com/maps?q=${mapsQuery}&output=embed`,
+  street: "Tv. Quintino Bocaiúva, 1420",
+  neighborhood: "Centro, Castanhal - PA",
+  reference: "A duas quadras da Praça do Estrela",
+  landmark:
+    "Entre o Bairro do Rio Branco e a Major Wilson, próximo ao Colégio São José",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Tv.+Quintino+Bocaiúva,+1420,+Castanhal+-+PA",
+  wazeUrl: "https://waze.com/ul?q=Tv.%20Quintino%20Bocai%C3%BAva%2C%201420%2C%20Castanhal%20-%20PA",
 } as const;
+
+export const businessHours = [
+  { days: "Segunda a Sexta", hours: "08:00 – 19:00" },
+  { days: "Sábado", hours: "08:00 – 17:00" },
+  { days: "Domingo", hours: "Fechado" },
+] as const;
+
+export const socialLinks = {
+  instagram: "https://www.instagram.com/barbeariadokelvin",
+} as const;
+
+export const legalNotice = "Projeto demonstrativo — Barbearia fictícia.";

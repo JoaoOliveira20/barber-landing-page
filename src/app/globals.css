@@ -1,51 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #3a2a21;
-  --surface: #564840;
-  --surface-elevated: #6d615b;
-  --surface-sunken: #2e2019;
-  --foreground: #efe7d8;
-  --muted: #c2c0b9;
-  --subtle: #bdbbb3;
-  --border: #4a3b33;
-  --accent: #c08a2e;
-  --accent-strong: #d9a347;
-  --accent-foreground: #14100d;
+  --tinta: #14293f;
+  --fumo: #21384f;
+  --papel: #ede6d6;
+  --carvao: #1a1714;
+  --vermelho: #c0342b;
+  --mostarda: #e0a526;
+
+  --section-space: 72px;
+  --text-hero: clamp(44px, 8vw, 96px);
+  --text-section-title: clamp(32px, 4vw, 48px);
+  --text-body: clamp(17px, 1.2vw, 18px);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-space: 128px;
+  }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-surface: var(--surface);
-  --color-surface-elevated: var(--surface-elevated);
-  --color-surface-sunken: var(--surface-sunken);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-subtle: var(--subtle);
-  --color-border: var(--border);
-  --color-accent: var(--accent);
-  --color-accent-strong: var(--accent-strong);
-  --color-accent-foreground: var(--accent-foreground);
-  --font-sans: var(--font-body-family), Arial, Helvetica, sans-serif;
-  --font-display: var(--font-display-family), Georgia, "Times New Roman", serif;
+  --color-tinta: var(--tinta);
+  --color-fumo: var(--fumo);
+  --color-papel: var(--papel);
+  --color-carvao: var(--carvao);
+  --color-vermelho: var(--vermelho);
+  --color-mostarda: var(--mostarda);
+  --font-display: var(--font-bevan), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-libre-franklin), Arial, Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
-  border-color: var(--border);
+  border-color: currentColor;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem;
+  scroll-padding-top: 88px;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  background: var(--tinta);
+  color: var(--papel);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
   text-rendering: optimizeLegibility;
 }
 
@@ -55,146 +57,35 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-strong);
-  outline-offset: 4px;
+  outline: 2px solid var(--vermelho);
+  outline-offset: 3px;
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-foreground);
+  background: var(--vermelho);
+  color: var(--papel);
 }
 
-@keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(0.4rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.container {
+  width: 100%;
+  max-width: 1216px;
+  margin-inline: auto;
+  padding-inline: 24px;
 }
 
-.page-enter {
-  animation: page-enter 600ms ease-out both;
-}
-
-.whatsapp-cta {
-  transition:
-    transform 200ms ease,
-    background-color 200ms ease,
-    box-shadow 200ms ease;
-}
-
-.whatsapp-cta:hover {
-  transform: translateY(-0.125rem);
-  box-shadow: 0 14px 38px rgb(192 138 46 / 22%);
-}
-
-.whatsapp-cta:active {
-  transform: translateY(0);
-}
-
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 400ms ease-out,
-    transform 400ms ease-out;
-}
-
-.scroll-reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.gallery-photo {
-  transition: transform 350ms ease-out;
-}
-
-.gallery-photo:hover {
-  transform: scale(1.04);
-}
-
-.price-row {
-  transition:
-    background-color 200ms ease,
-    transform 150ms ease;
-}
-
-.price-row:hover,
-.price-row:focus-visible {
-  background-color: color-mix(in srgb, var(--foreground) 6%, transparent);
-}
-
-.price-row:active {
-  transform: scale(0.98);
-}
-
-.price-row-name {
-  display: inline-block;
-  transition: transform 200ms ease;
-}
-
-.price-row:hover .price-row-name,
-.price-row:focus-visible .price-row-name {
-  transform: translateX(4px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .page-enter {
-    animation: none;
-  }
-
-  .whatsapp-cta {
-    transition: none;
-  }
-
-  .whatsapp-cta:hover,
-  .whatsapp-cta:active {
-    transform: none;
-  }
-
-  .scroll-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .gallery-photo {
-    transition: none;
-  }
-
-  .gallery-photo:hover {
-    transform: none;
-  }
-
-  .price-row {
-    transition: background-color 200ms ease;
-  }
-
-  .price-row:active {
-    transform: none;
-  }
-
-  .price-row-name {
-    transition: none;
-  }
-
-  .price-row:hover .price-row-name,
-  .price-row:focus-visible .price-row-name {
-    transform: none;
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 40px;
   }
 }
 
-@media (scripting: none) {
-  .scroll-reveal {
-    opacity: 1;
-    transform: none;
-  }
+.section {
+  padding-block: var(--section-space);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-section-title);
+  font-weight: 400;
+  line-height: 1.1;
 }

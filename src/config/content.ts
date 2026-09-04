@@ -1,172 +1,172 @@
-export type HeroContent = Readonly<{
-  title: string;
-  subtitle: string;
-  primaryCtaLabel: string;
-  secondaryCtaLabel: string;
-  infoItems: readonly string[];
-}>;
+import { buildWhatsappUrl } from "@/config/site";
 
-export const heroContent: HeroContent = {
-  title: "Mais de dez anos cortando cabelo no Centro de Castanhal.",
+export const heroContent = {
+  badge: "Desde 2018 • Centro de Castanhal",
+  titleLines: ["Corte bom.", "Preço justo.", "Sem frescura."],
+  highlightWord: "Sem frescura.",
   subtitle:
-    "Corte, barba e pezinho de terça a domingo. Marca pelo WhatsApp ou chega e espera a vez, do jeito que você preferir.",
-  primaryCtaLabel: "Chamar no WhatsApp",
+    "Barbearia de bairro no Centro de Castanhal. Corte, barba e aquele atendimento que faz você voltar. Tradição viva na navalha e tesoura afiada.",
+  primaryCtaLabel: "Agendar pelo WhatsApp",
+  primaryCtaUrl: buildWhatsappUrl(
+    "Olá Kelvin, gostaria de agendar um horário na barbearia",
+  ),
   secondaryCtaLabel: "Ver preços",
-  infoItems: [
-    "Terça a domingo",
-    "Centro de Castanhal",
-    "Pix, cartão e dinheiro",
-  ],
+  secondaryCtaHref: "#servicos",
+  photoCaption: "Tv. Quintino Bocaiúva",
 } as const;
+
+export const facts = [
+  {
+    label: "Centro de Castanhal",
+    detail: "Tv. Quintino Bocaiúva, próx. à Praça do Estrela",
+  },
+  {
+    label: "Seg — Sáb",
+    detail: "Seg a Sex 08h–19h | Sáb 08h–17h",
+  },
+  {
+    label: "Agendamento fácil",
+    detail: "WhatsApp direto sem fila de espera",
+  },
+] as const;
 
 export type Service = Readonly<{
   name: string;
-  duration: string;
+  description: string;
   price: string;
+  featured?: boolean;
+  whatsappUrl?: string;
 }>;
 
-export const services = [
+export const services: readonly Service[] = [
   {
     name: "Corte masculino",
-    duration: "40 min",
+    description: "Tesoura, máquina e alinhamento clássico",
     price: "R$ 30",
+    whatsappUrl: buildWhatsappUrl("Olá, gostaria de agendar um Corte masculino"),
   },
   {
     name: "Barba na navalha",
-    duration: "30 min",
+    description: "Toalha quente, navalhete e pós-barba artesanal",
     price: "R$ 25",
+    whatsappUrl: buildWhatsappUrl("Olá, gostaria de agendar uma Barba na navalha"),
   },
   {
-    name: "Corte + barba",
-    duration: "1h10",
+    name: "Corte + Barba",
+    description: "O combo completo do sábado",
     price: "R$ 50",
+    featured: true,
+    whatsappUrl: buildWhatsappUrl(
+      "Olá, gostaria de agendar um Combo Corte + Barba",
+    ),
   },
   {
-    name: "Corte infantil (até 10 anos)",
-    duration: "30 min",
-    price: "R$ 25",
+    name: "Acabamento / Pezinho",
+    description: "Contorno, nuca limpa e alinhamento",
+    price: "R$ 15",
   },
   {
-    name: "Pezinho",
-    duration: "10 min",
+    name: "Sobrancelha na navalha",
+    description: "Alinhamento e limpeza rápida",
     price: "R$ 10",
   },
-  {
-    name: "Sobrancelha",
-    duration: "10 min",
-    price: "R$ 10",
-  },
-] as const satisfies readonly Service[];
+];
 
-export const servicesNote = "Sábado depois das 16h, só com agendamento.";
+export const pricePaymentNote = "Pagamento em dinheiro ou Pix";
 
-export type DifferentialIcon = "breeze" | "location" | "calendar";
-
-export type Differential = Readonly<{
+export type WhyHereReason = Readonly<{
   title: string;
   description: string;
-  icon: DifferentialIcon;
+  tag: string;
 }>;
 
-export const differentials = [
+export const whyHereReasons: readonly WhyHereReason[] = [
   {
-    title: "Climatizado",
+    title: "Preço justo",
     description:
-      "Ar-condicionado ligado o dia todo. Você espera a vez no fresco, com café por conta da casa.",
-    icon: "breeze",
+      "Serviços simples, preço claro e sem surpresa. O valor que tá na placa é o valor que você paga no balcão, sem firula e sem pegadinha.",
+    tag: "Transparência total",
   },
   {
-    title: "Dá pra parar na frente",
+    title: "Atendimento de verdade",
     description:
-      "Carro ou moto, tem espaço na porta. Você não vai rodar atrás de vaga.",
-    icon: "location",
+      "Um lugar onde você já chega conhecido. Sem pose, café passado na hora, resenha esportiva sobre o Remo e o Paysandu, e conversa boa.",
+    tag: "Cuidado de vizinho",
   },
   {
-    title: "Com ou sem agendamento",
+    title: "Corte bem feito",
     description:
-      "Marcou, seu horário fica guardado. Não marcou, chega e espera a vez.",
-    icon: "calendar",
+      "Experiência, cuidado e atenção aos detalhes. Do corte social clássico ao disfarçado na régua com acabamento impecável na navalha.",
+    tag: "Navalha afiada",
   },
-] as const satisfies readonly Differential[];
+];
 
 export type Barber = Readonly<{
   name: string;
-  role: string | null;
-  bio: string;
+  quote: string;
+  photo: string;
+  whatsappUrl: string;
 }>;
 
-export const barbers = [
+export const barbers: readonly Barber[] = [
   {
     name: "Kelvin",
-    role: "Dono",
-    bio: "Corta desde 2013. Começou atendendo na sala de casa e abriu a barbearia em 2018. Faz degradê e barba na navalha.",
+    quote:
+      "Corte clássico, barba na navalha e conversa boa. Aqui a gente cuida da sua aparência com o respeito que você merece.",
+    photo: "/images/barber-kelvin.png",
+    whatsappUrl: buildWhatsappUrl("Olá Kelvin, gostaria de agendar um horário"),
   },
   {
-    name: "Léo",
-    role: null,
-    bio: "Entrou em 2021. É quem faz os cortes mais modernos, freestyle e desenho. Bom com criança.",
+    name: "Rafael",
+    quote:
+      "Do degradê navalhado ao corte tradicional, sempre no detalhe milimétrico e respeitando a textura do seu cabelo.",
+    photo: "/images/barber-rafael.png",
+    whatsappUrl: buildWhatsappUrl("Olá Rafael, gostaria de agendar um horário"),
   },
-] as const satisfies readonly Barber[];
+];
+
+export const galleryPlaceholderCount = 6;
 
 export type Testimonial = Readonly<{
   name: string;
-  attribution: string | null;
+  tenure: string;
   quote: string;
 }>;
 
-export const testimonials = [
+export const testimonials: readonly Testimonial[] = [
   {
-    name: "Rafael",
-    attribution: "cliente desde 2021",
-    quote: "Corto com o Kelvin há uns 4 anos. Nunca saí de lá insatisfeito.",
-  },
-  {
-    name: "Denise M.",
-    attribution: null,
+    name: "Marcos Silveira",
+    tenure: "Cliente há 2 anos",
     quote:
-      "Levei meu filho de 7 anos, que tem pavor de barbeiro. O Léo teve uma paciência que eu não esperava, cortou brincando com ele o tempo todo. Voltamos semana passada e ele já foi correndo sentar na cadeira.",
+      "Corte sempre bem feito e o preço é justo. Virou meu barbeiro de confiança em Castanhal.",
   },
   {
-    name: "Anderson",
-    attribution: null,
+    name: "Thiago Pantoja",
+    tenure: "Cliente há 1 ano",
     quote:
-      "Quando tá cheio no sábado demora um pouco, mas o corte compensa. Prefiro marcar durante a semana.",
-  },
-] as const satisfies readonly Testimonial[];
-
-export const galleryNote =
-  "Quatro cadeiras, sofá de espera e café sempre pronto.";
-
-export type GalleryItem = Readonly<{
-  image: Readonly<{
-    src: `/images/${string}`;
-    alt: string;
-  }>;
-}>;
-
-export const galleryItems: readonly GalleryItem[] = [
-  {
-    image: {
-      src: "/images/barber-cut.webp",
-      alt: "Barbeiro realizando um corte masculino na barbearia",
-    },
+      "Ambiente tranquilo, sem frescura e atendimento de primeira. Café sempre quentinho.",
   },
   {
-    image: {
-      src: "/images/barber-shop.webp",
-      alt: "Interior da barbearia com espelhos e poltronas",
-    },
-  },
-  {
-    image: {
-      src: "/images/barber-service.webp",
-      alt: "Área de espera da barbearia com sofá e geladeira de bebidas",
-    },
-  },
-  {
-    image: {
-      src: "/images/beard.webp",
-      alt: "Barbeiro fazendo a barba de um cliente com navalha",
-    },
+    name: "Anderson Barata",
+    tenure: "Cliente há 4 anos",
+    quote:
+      "Já corto aqui faz 4 anos com o Kelvin. Não troco por nenhuma outra. O cara manja muito.",
   },
 ];
+
+export const finalCta = {
+  titleLines: ["Seu próximo corte", "começa aqui."],
+  subtitle:
+    "Escolha o serviço e fale com a gente pelo WhatsApp. Sem burocracia, horário marcado e garantia de sair na régua.",
+  ctaLabel: "Agendar pelo WhatsApp agora",
+  ctaUrl: buildWhatsappUrl(
+    "Olá Kelvin, gostaria de agendar um horário na barbearia",
+  ),
+  note: "Sem taxa de agendamento · Atendimento pontual",
+} as const;
+
+export const footerContent = {
+  tagline:
+    "Barbearia do Kelvin — Corte clássico, navalha afiada e tradição de bairro no coração do Pará.",
+  copyright: "© 2026 Barbearia do Kelvin. Todos os direitos reservados.",
+} as const;
