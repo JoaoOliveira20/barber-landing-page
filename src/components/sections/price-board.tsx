@@ -8,7 +8,7 @@ export function PriceBoard() {
       <Container>
         <SectionHeading title="Tabela de preços" />
 
-        <div className="relative mt-10">
+        <div className="reveal-panel relative mt-10">
           <span className="absolute -left-1 -top-1 h-6 w-6 border-l-2 border-t-2 border-carvao" />
           <span className="absolute -right-1 -top-1 h-6 w-6 border-r-2 border-t-2 border-carvao" />
 

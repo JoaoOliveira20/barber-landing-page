@@ -53,7 +53,7 @@ fica `[~]` com uma linha dizendo o que falta.
       botão do hero sair da tela, via `IntersectionObserver`), barra fixa
       de largura total no mobile. Arquivos:
       `src/components/ui/floating-whatsapp.tsx` (client).
-- [ ] **Parallax e reveal** — `animation-timeline: view()` em CSS puro no
+- [x] **Parallax e reveal** — `animation-timeline: view()` em CSS puro no
       hero e na galeria (parallax) e nos títulos de seção + tabela de
       preços (reveal), com fallback `@supports` e respeito a
       `prefers-reduced-motion`. Sem listener de scroll em JS. Arquivos:

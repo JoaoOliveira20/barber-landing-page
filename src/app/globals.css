@@ -94,3 +94,65 @@ button {
   line-height: 1.1;
   text-transform: uppercase;
 }
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes parallax-photo {
+  from {
+    transform: scale(1.12) translateY(-4%);
+  }
+
+  to {
+    transform: scale(1.12) translateY(4%);
+  }
+}
+
+@keyframes parallax-strip {
+  from {
+    transform: translateY(-16px);
+  }
+
+  to {
+    transform: translateY(16px);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .section-title,
+  .reveal-panel {
+    animation: reveal-up 400ms ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .parallax-photo {
+    animation: parallax-photo linear both;
+    animation-timeline: view();
+  }
+
+  .parallax-strip {
+    animation: parallax-strip linear both;
+    animation-timeline: view();
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-title,
+  .reveal-panel,
+  .parallax-photo,
+  .parallax-strip {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}

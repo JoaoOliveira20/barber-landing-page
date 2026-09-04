@@ -56,14 +56,14 @@ export function HeroSection() {
         </div>
 
         <div>
-          <div className="relative aspect-[12/11] w-full">
+          <div className="relative aspect-[12/11] w-full overflow-hidden">
             <Image
               src="/images/hero-barbearia.png"
               alt="Cliente sendo atendido na Barbearia do Kelvin"
               fill
               priority
               sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
+              className="parallax-photo object-cover"
             />
           </div>
           <p className="mt-3 font-body text-xs uppercase tracking-wider text-papel/60">

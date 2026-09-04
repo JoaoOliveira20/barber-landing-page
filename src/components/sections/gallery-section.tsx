@@ -8,11 +8,11 @@ export function GallerySection() {
   return (
     <section id="galeria" className="section bg-tinta">
       <Container>
-        <h2 className="border-b border-papel/20 pb-4 font-display text-section-title uppercase text-papel">
+        <h2 className="section-title border-b border-papel/20 pb-4 text-papel">
           {galleryIntro.title}
         </h2>
 
-        <div className="mt-8 flex gap-1 overflow-x-auto sm:hidden">
+        <div className="parallax-strip mt-8 flex gap-1 overflow-x-auto sm:hidden">
           {tiles.map((_, index) => (
             <PlaceholderPhoto
               key={index}
@@ -21,7 +21,7 @@ export function GallerySection() {
           ))}
         </div>
 
-        <div className="mt-8 hidden grid-cols-3 gap-1 sm:grid">
+        <div className="parallax-strip mt-8 hidden grid-cols-3 gap-1 sm:grid">
           {tiles.map((_, index) => (
             <PlaceholderPhoto
               key={index}
