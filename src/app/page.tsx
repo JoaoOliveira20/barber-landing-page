@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/layout/site-header";
+import { FactsStrip } from "@/components/sections/facts-strip";
 import { HeroSection } from "@/components/sections/hero-section";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <FactsStrip />
       </main>
     </>
   );

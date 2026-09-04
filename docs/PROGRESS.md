@@ -23,7 +23,7 @@ fica `[~]` com uma linha dizendo o que falta.
       botão primário (WhatsApp) + secundário (âncora para preços), foto
       com `next/image priority` e legenda de endereço sobreposta.
       Arquivos: `src/components/sections/hero-section.tsx`.
-- [ ] **Faixa de três fatos** — endereço, horário, agendamento fácil, com
+- [x] **Faixa de três fatos** — endereço, horário, agendamento fácil, com
       ícone, em faixa azul-escura logo abaixo do hero. Arquivos:
       `src/components/sections/facts-strip.tsx`.
 - [ ] **Tabela de preços** — cartão de borda fina, 5 serviços com linha
