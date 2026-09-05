@@ -5,39 +5,45 @@ import { barbers, barbersIntro } from "@/config/content";
 
 export function BarbersSection() {
   return (
-    <section id="barbeiros" className="section bg-papel text-carvao">
+    <section id="barbeiros" className="section border-b-[3px] border-tinta bg-papel text-carvao">
       <Container>
-        <h2 className="section-title">{barbersIntro.title}</h2>
-        <p className="mt-4 max-w-xl font-body text-body text-carvao/70">
-          {barbersIntro.subtitle}
-        </p>
+        <div className="mb-12 space-y-1">
+          <h2 className="section-title">{barbersIntro.title}</h2>
+          <p className="max-w-md font-body text-body-md text-carvao/60">
+            {barbersIntro.subtitle}
+          </p>
+        </div>
 
-        <div className="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {barbers.map((barber) => (
-            <div key={barber.name}>
-              <div className="relative aspect-[16/9]">
+            <div key={barber.name} className="flex flex-col">
+              <div className="relative mb-4 h-80 overflow-hidden">
                 <Image
                   src={barber.photo}
                   alt={`Barbeiro ${barber.name} na Barbearia do Kelvin`}
                   fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-top contrast-105"
                 />
               </div>
-              <h3 className="mt-6 border-b-2 border-carvao pb-4 font-display text-xl uppercase text-carvao">
-                {barber.name}
-              </h3>
-              <p className="mt-5 font-body italic text-body text-carvao/80">
+              <div className="mb-2 flex items-baseline justify-between border-b-2 border-tinta pb-2">
+                <h3 className="font-display text-headline-lg uppercase text-carvao">
+                  {barber.name}
+                </h3>
+              </div>
+              <p className="mt-3 font-body text-body-lg italic leading-relaxed text-carvao">
                 &ldquo;{barber.quote}&rdquo;
               </p>
-              <a
-                href={barber.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex min-h-11 items-center border-t border-carvao/20 pt-5 font-body text-sm font-bold uppercase tracking-wide text-carvao"
-              >
-                Agendar c/ {barber.name} →
-              </a>
+              <div className="mt-4 flex items-center justify-between border-t border-tinta/20 pt-2">
+                <a
+                  href={barber.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-label-lg font-bold uppercase text-carvao hover:underline"
+                >
+                  Agendar c/ {barber.name} →
+                </a>
+              </div>
             </div>
           ))}
         </div>

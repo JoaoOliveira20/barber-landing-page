@@ -4,6 +4,16 @@ Reconstrução completa a partir de `references/layout-desktop-aprovado.png`
 (fonte de verdade visual) e `docs/content.md` (fonte de verdade de texto).
 Código anterior em `src/` é legado e será substituído, não reaproveitado.
 
+**Atualização:** a fonte de verdade visual mudou para
+`references/stitch-export-referencia.html` (ver `CLAUDE.md` e
+`docs/design-system.md`). Todas as seções abaixo já foram revisadas pra
+bater com esse HTML: escala tipográfica nomeada, espaçamento por seção,
+raio de 4px + sombra projetada dura (decisão explícita do usuário,
+substituindo a regra antiga de raio 0/sem sombra), catálogo de hover
+(linha de preço inverte cor, imagem de galeria dá zoom, etc.). O checklist
+abaixo é histórico da construção inicial — para o estado visual atual,
+`design-system.md` é quem manda.
+
 Convenção: cada item só é marcado `[x]` depois de (1) conferir contra o
 print aprovado e (2) conferir em 375px de largura. Um item pela metade
 fica `[~]` com uma linha dizendo o que falta.

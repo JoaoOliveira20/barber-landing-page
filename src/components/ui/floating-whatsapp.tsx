@@ -30,13 +30,11 @@ export function FloatingWhatsapp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chamar no WhatsApp"
-        className={`fixed bottom-6 right-6 z-40 hidden min-h-11 items-center gap-2 border border-papel/20 bg-vermelho px-5 py-3 font-body text-sm font-bold uppercase tracking-wide text-papel transition-opacity duration-200 lg:flex ${
+        className={`fixed bottom-6 right-6 z-40 hidden h-[60px] w-[60px] items-center justify-center rounded-full bg-vermelho text-papel transition-all duration-200 hover:bg-vermelho-escuro md:flex ${
           isHeroCtaHidden ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
-        style={{ borderRadius: "2px" }}
       >
         <WhatsappIcon />
-        Chamar no WhatsApp
       </a>
 
       <a
@@ -44,7 +42,7 @@ export function FloatingWhatsapp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chamar no WhatsApp"
-        className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-center gap-2 bg-vermelho font-body text-sm font-bold uppercase tracking-wide text-papel lg:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-center gap-2 bg-vermelho font-body text-label-lg uppercase text-papel transition-colors duration-200 hover:bg-vermelho-escuro md:hidden"
         style={{ height: "var(--mobile-whatsapp-bar-height)" }}
       >
         <WhatsappIcon />

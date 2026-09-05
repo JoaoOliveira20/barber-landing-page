@@ -1,9 +1,8 @@
 import { Container } from "@/components/layout/container";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { whyHereReasons } from "@/config/content";
 
 const icons = [
-  <span key="price" aria-hidden="true" className="font-body text-2xl font-black text-papel">
+  <span key="price" aria-hidden="true" className="font-display text-headline-md text-papel">
     R$
   </span>,
   (
@@ -25,23 +24,30 @@ const icons = [
 
 export function WhyHereSection() {
   return (
-    <section className="section bg-tinta">
+    <section className="section border-b-[3px] border-papel bg-tinta text-papel">
       <Container>
-        <SectionHeading title="Por que aqui?" />
+        <div className="mb-12">
+          <h2 className="font-display text-headline-lg uppercase text-papel">Por que aqui?</h2>
+          <div className="mt-2 h-1 w-16 bg-papel" />
+        </div>
 
-        <div className="mt-10 grid gap-10 sm:grid-cols-3 sm:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {whyHereReasons.map((reason, index) => (
-            <div key={reason.title}>
-              <div className="flex h-9 items-center">{icons[index]}</div>
-              <h3 className="mt-4 font-display text-xl uppercase text-papel">
-                {reason.title}
-              </h3>
-              <p className="mt-3 font-body text-sm text-papel/70">
-                {reason.description}
-              </p>
-              <p className="mt-3 font-body text-xs font-bold uppercase tracking-wide text-papel/50">
+            <div key={reason.title} className="flex flex-col justify-between py-3">
+              <div>
+                <div className="mb-3 flex h-12 w-12 items-center justify-start">
+                  {icons[index]}
+                </div>
+                <h3 className="mb-2 font-display text-headline-sm uppercase text-papel">
+                  {reason.title}
+                </h3>
+                <p className="font-body text-body-md leading-relaxed text-papel/80">
+                  {reason.description}
+                </p>
+              </div>
+              <div className="mt-4 font-body text-label-sm uppercase text-papel/80">
                 • {reason.tag}
-              </p>
+              </div>
             </div>
           ))}
         </div>

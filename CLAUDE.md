@@ -8,27 +8,25 @@ referências válidas são só as descritas abaixo.
 
 ## Referências de design
 
-O layout de destino é `references/layout-desktop-aprovado.png`. Essa é a
-fonte de verdade visual: cor exata de cada seção, peso de título,
-espaçamento, ordem e quantidade de elemento por seção — tudo deve bater
-com esse print. Quando o print e qualquer texto abaixo divergirem em
-detalhe visual, **o print vence**.
+A fonte de verdade visual é `references/stitch-export-referencia.html` — o
+HTML puro exportado do Stitch, com todas as seções da página. Ele manda em
+tudo: cor exata, tipografia, espaçamento, raio, sombra, hover e tamanho de
+cada seção. `references/layout-desktop-aprovado.png` é a referência
+secundária, útil pra conferir composição geral (ordem e quantidade de
+elemento por seção); quando o HTML e o print divergirem em detalhe visual,
+**o HTML vence**.
 
 Antes de começar uma seção nova, e de novo ao terminar cada seção, olhe o
-print de novo e confira se o resultado bate com ele antes de seguir para a
+HTML de novo e confira se o resultado bate com ele antes de seguir para a
 próxima.
 
-`docs/design-system.md` serve só para o que a imagem não mostra: valor
-hexadecimal exato, nome das fontes, e regras de comportamento (parallax,
-hover, botão flutuante). Não usar esse arquivo para decidir aparência de
-seção — isso já está resolvido no print.
+`docs/design-system.md` documenta em prosa o que foi extraído do HTML
+(escala tipográfica nomeada, espaçamento, raio, sombra, catálogo de hover)
+pra não precisar reler o arquivo inteiro toda vez — mas o HTML continua
+sendo a fonte primária caso o resumo e o arquivo divirjam.
 
 `references/logo-wordmark.svg` é a referência do lettering da marca no
 menu, feito só de tipografia, sem ícone.
-
-Existe também um export de referência do Stitch, mencionado no
-design-system, com raio de borda e sombra que **não** devem ser seguidos —
-ver a seção final desse documento.
 
 ## Conteúdo
 
@@ -76,10 +74,13 @@ de verdade para ele:
 - Nenhum scroll horizontal em nenhuma largura. Nenhum elemento pode
   estourar a viewport.
 - Área de toque de qualquer elemento clicável: no mínimo 44x44px.
-- Espaço vertical entre seções: 72px no mobile, 128px no desktop.
-- Tipografia no mobile: hero em 44px, títulos de seção em 32px, corpo em
-  17px. No desktop: hero em 96px, títulos em 48px, corpo em 18px. Usa
-  clamp para a transição, não salto por breakpoint.
+- Espaço vertical entre seções: ver `docs/design-system.md` — varia por
+  seção (32/64px no hero, 24px fixo na faixa de fatos, 32/48px nos
+  depoimentos, 48/64px nas demais), conforme `stitch-export-referencia.html`.
+- Tipografia: escala nomeada em `docs/design-system.md`. Só o token
+  `display` (hero e títulos de seção) muda de tamanho por breakpoint —
+  32px mobile a 48px desktop via `clamp`, sem salto. Os demais tokens
+  (corpo, label, preço) têm tamanho fixo, igual em qualquer largura.
 - Tabela de preços: no mobile o nome do serviço e o preço continuam na
   mesma linha, com a linha pontilhada entre eles. Não empilha o preço
   abaixo do nome.

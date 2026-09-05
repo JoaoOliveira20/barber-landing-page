@@ -3,9 +3,9 @@ export function DashDivider({ className }: { className?: string }) {
 
   return (
     <div className={classes} aria-hidden="true">
-      <span className="h-0.5 w-8 bg-current opacity-40" />
-      <span className="h-1 w-1 bg-current opacity-40" />
-      <span className="h-0.5 w-8 bg-current opacity-40" />
+      <span className="h-[2px] w-12 bg-current" />
+      <span className="h-[3px] w-3 bg-current" />
+      <span className="h-[2px] w-12 bg-current" />
     </div>
   );
 }

@@ -1,66 +1,92 @@
-import { Container } from "@/components/layout/container";
 import { DashDivider } from "@/components/ui/dash-divider";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { pricePaymentNote, services } from "@/config/content";
+import { pricePaymentNote, services, type Service } from "@/config/content";
+
+function PriceRow({ service }: { service: Service }) {
+  const rowClasses = [
+    "group block p-4 border-2 border-tinta transition-all hover:bg-tinta hover:text-papel",
+    service.featured ? "bg-papel-destaque shadow-hard-3" : "bg-papel shadow-hard-2",
+  ].join(" ");
+
+  const content = (
+    <div className="flex items-baseline justify-between gap-3">
+      <div className="min-w-0 pr-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="font-body text-title-md uppercase text-carvao group-hover:text-papel">
+            {service.name}
+          </span>
+          {service.featured ? (
+            <span className="border border-carvao bg-tinta px-2 py-0.5 font-body text-label-sm uppercase text-papel">
+              Mais pedido
+            </span>
+          ) : null}
+        </div>
+        <p className="mt-1 font-body text-body-md text-carvao/70 group-hover:text-papel/70">
+          {service.description}
+        </p>
+      </div>
+      <div className="flex shrink-0 items-center gap-2">
+        <span className="hidden font-body text-carvao/50 tracking-widest group-hover:text-papel/50 sm:inline">
+          ...............
+        </span>
+        <span className="font-display text-price-display text-carvao group-hover:text-papel">
+          {service.price}
+        </span>
+      </div>
+    </div>
+  );
+
+  if (service.whatsappUrl) {
+    return (
+      <a
+        href={service.whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={rowClasses}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <div className={rowClasses}>{content}</div>;
+}
 
 export function PriceBoard() {
   return (
-    <section id="servicos" className="section bg-papel text-carvao">
-      <Container>
-        <SectionHeading title="Tabela de preços" />
+    <section id="servicos" className="section border-b-[3px] border-tinta bg-papel px-4 text-carvao lg:px-10">
+      <div className="mx-auto max-w-[960px]">
+        <SectionHeading title="Tabela de preços" className="mb-8" />
 
-        <div className="reveal-panel relative mt-10">
-          <span className="absolute -left-1 -top-1 h-6 w-6 border-l-2 border-t-2 border-carvao" />
-          <span className="absolute -right-1 -top-1 h-6 w-6 border-r-2 border-t-2 border-carvao" />
-          <span className="absolute -bottom-1 -left-1 h-6 w-6 border-b-2 border-l-2 border-carvao" />
-          <span className="absolute -bottom-1 -right-1 h-6 w-6 border-b-2 border-r-2 border-carvao" />
+        <div className="reveal-panel relative border-[3px] border-tinta bg-papel-cartao p-3 shadow-hard-6 sm:p-6">
+          <span className="absolute left-1 top-1 h-3 w-3 border-l-[3px] border-t-[3px] border-tinta" />
+          <span className="absolute right-1 top-1 h-3 w-3 border-r-[3px] border-t-[3px] border-tinta" />
+          <span className="absolute bottom-1 left-1 h-3 w-3 border-b-[3px] border-l-[3px] border-tinta" />
+          <span className="absolute bottom-1 right-1 h-3 w-3 border-b-[3px] border-r-[3px] border-tinta" />
 
-          <div className="border border-carvao">
-            <div className="flex items-center justify-between bg-tinta px-6 py-4">
-              <p className="font-body text-sm font-bold uppercase tracking-wider text-papel">
-                Serviço
-              </p>
-              <p className="font-body text-sm font-bold uppercase tracking-wider text-papel">
-                Valor (R$)
-              </p>
-            </div>
+          <div className="mb-4 flex items-center justify-between border-2 border-carvao bg-tinta px-4 py-2">
+            <span className="font-display text-headline-sm uppercase tracking-wider text-papel">
+              Serviço
+            </span>
+            <span className="font-display text-headline-sm uppercase tracking-wider text-papel">
+              Valor (R$)
+            </span>
+          </div>
 
+          <div className="space-y-2">
             {services.map((service) => (
-              <div
-                key={service.name}
-                className="border-t border-carvao px-6 py-5"
-              >
-                <div className="flex items-baseline gap-3">
-                  <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-1">
-                    <p className="font-body text-base font-bold uppercase text-carvao">
-                      {service.name}
-                    </p>
-                    {service.featured ? (
-                      <span className="whitespace-nowrap bg-tinta px-2 py-0.5 font-body text-[11px] font-bold uppercase tracking-wide text-papel">
-                        Mais pedido
-                      </span>
-                    ) : null}
-                  </div>
-                  <span className="h-px min-w-4 flex-1 border-t border-dotted border-carvao/50" />
-                  <p className="shrink-0 whitespace-nowrap font-display text-xl text-carvao">
-                    {service.price}
-                  </p>
-                </div>
-                <p className="mt-1 font-body text-sm text-carvao/70">
-                  {service.description}
-                </p>
-              </div>
+              <PriceRow key={service.name} service={service} />
             ))}
+          </div>
 
-            <div className="flex items-center justify-end gap-4 border-t border-carvao px-6 py-4 sm:justify-between">
-              <DashDivider className="hidden sm:flex" />
-              <p className="text-right font-body text-xs uppercase tracking-wider text-carvao/60">
-                {pricePaymentNote}
-              </p>
-            </div>
+          <div className="mt-4 flex flex-col items-center justify-between gap-2 border-t-2 border-tinta pt-3 text-center sm:flex-row sm:text-left">
+            <DashDivider className="hidden text-tinta sm:flex" />
+            <span className="font-body text-label-sm uppercase tracking-wider text-carvao/70">
+              {pricePaymentNote}
+            </span>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -7,12 +7,12 @@ export function SectionHeading({
   title: string;
   className?: string;
 }) {
-  const classes = ["section-title", className].filter(Boolean).join(" ");
+  const wrapperClasses = ["space-y-1", className].filter(Boolean).join(" ");
 
   return (
-    <div>
-      <h2 className={classes}>{title}</h2>
-      <DashDivider className="mt-3" />
+    <div className={wrapperClasses}>
+      <h2 className="section-title">{title}</h2>
+      <DashDivider />
     </div>
   );
 }

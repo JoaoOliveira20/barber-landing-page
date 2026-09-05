@@ -8,7 +8,7 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="lg:hidden">
+    <div className="md:hidden">
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
@@ -31,13 +31,13 @@ export function MobileNav() {
           id="mobile-nav-panel"
           className="absolute inset-x-0 top-full border-t border-papel/10 bg-tinta"
         >
-          <nav className="container-hero flex flex-col py-4">
+          <nav className="container flex flex-col py-4">
             {navigationLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="flex min-h-11 items-center border-b border-papel/10 font-body text-sm font-semibold uppercase tracking-wide text-papel last:border-b-0"
+                className="flex min-h-11 items-center border-b border-papel/10 font-body text-label-lg uppercase tracking-wider text-papel last:border-b-0"
               >
                 {link.label}
               </a>
@@ -47,8 +47,7 @@ export function MobileNav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="mt-4 flex min-h-11 items-center justify-center bg-vermelho px-6 font-body text-sm font-bold uppercase tracking-wide text-papel"
-              style={{ borderRadius: "2px" }}
+              className="mt-4 flex min-h-11 items-center justify-center bg-vermelho px-6 font-body text-label-lg uppercase tracking-wider text-papel"
             >
               Agendar pelo WhatsApp
             </a>

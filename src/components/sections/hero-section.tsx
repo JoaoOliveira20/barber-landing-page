@@ -1,23 +1,25 @@
 import Image from "next/image";
 
+import { Container } from "@/components/layout/container";
 import { heroContent } from "@/config/content";
 
 export function HeroSection() {
   return (
-    <section className="section pt-12 lg:pt-20">
-      <div className="hero-grid container-hero grid items-stretch gap-12 lg:gap-10">
-        <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-3.5 w-5 flex-col overflow-hidden">
-              <span className="h-1/2 bg-vermelho" />
-              <span className="h-1/2 bg-papel" />
+    <section className="border-b-[3px] border-papel bg-tinta py-8 text-papel lg:py-16">
+      <Container className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+        <div className="flex flex-col items-start space-y-4 lg:col-span-7">
+          <div className="inline-flex items-center gap-2 pb-1">
+            <span className="flex h-3.5 w-7 overflow-hidden">
+              <span className="w-1/3 bg-vermelho" />
+              <span className="w-1/3 bg-papel" />
+              <span className="w-1/3 bg-tinta" />
             </span>
-            <p className="font-body text-sm font-bold uppercase tracking-wider text-papel/90">
+            <span className="font-body text-label-lg uppercase tracking-widest text-papel">
               {heroContent.badge}
-            </p>
+            </span>
           </div>
 
-          <h1 className="mt-6 font-display text-hero uppercase leading-[1.05] text-papel">
+          <h1 className="font-display text-display uppercase leading-tight text-papel">
             {heroContent.titleLines.map((line) => (
               <span key={line} className="block">
                 {line === heroContent.highlightWord ? (
@@ -29,47 +31,45 @@ export function HeroSection() {
             ))}
           </h1>
 
-          <p className="mt-6 max-w-md font-body text-body text-papel/80">
+          <p className="max-w-xl font-body text-body-lg text-papel/90">
             {heroContent.subtitle}
           </p>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="flex w-full flex-wrap items-center gap-4 pt-2 sm:w-auto">
             <a
               id="hero-whatsapp-cta"
               href={heroContent.primaryCtaUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-11 items-center justify-center border border-papel/20 bg-vermelho px-8 py-4 text-center font-body text-sm font-bold uppercase tracking-wide text-papel"
-              style={{ borderRadius: "2px" }}
+              className="press-2 shadow-hard-4 w-full border-2 border-papel bg-vermelho px-6 py-3 text-center font-body text-headline-sm uppercase text-papel transition-all hover:brightness-110 sm:w-auto"
             >
               {heroContent.primaryCtaLabel}
             </a>
             <a
               href={heroContent.secondaryCtaHref}
-              className="flex min-h-11 items-center justify-center border border-mostarda px-8 py-4 text-center font-body text-sm font-bold uppercase tracking-wide text-papel"
-              style={{ borderRadius: "2px" }}
+              className="press-2 shadow-hard-3 w-full border-2 border-papel bg-transparent px-6 py-3 text-center font-body text-headline-sm uppercase text-papel transition-all hover:bg-papel hover:text-tinta sm:w-auto"
             >
               {heroContent.secondaryCtaLabel}
             </a>
           </div>
         </div>
 
-        <div className="flex flex-col">
-          <div className="relative w-full flex-1 aspect-[4/3] overflow-hidden lg:aspect-auto">
+        <div className="relative mt-4 lg:col-span-5 lg:mt-0">
+          <div className="relative h-[360px] overflow-hidden lg:h-[440px]">
             <Image
               src="/images/hero-barbearia.png"
               alt="Cliente sendo atendido na Barbearia do Kelvin"
               fill
               priority
-              sizes="(min-width: 1600px) 45vw, (min-width: 1024px) 38vw, 100vw"
-              className="parallax-photo object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="parallax-photo object-cover contrast-105"
             />
           </div>
-          <p className="mt-3 font-body text-xs uppercase tracking-wider text-papel/60">
+          <p className="mt-2 font-body text-label-lg font-bold uppercase tracking-wider text-papel/80">
             {heroContent.photoCaption}
           </p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

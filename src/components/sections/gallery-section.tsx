@@ -6,33 +6,30 @@ const tiles = Array.from({ length: galleryPlaceholderCount });
 
 export function GallerySection() {
   return (
-    <section id="galeria" className="section bg-tinta">
+    <section id="galeria" className="section border-b-[3px] border-papel bg-tinta text-papel">
       <Container>
-        <h2 className="section-title border-b border-papel/20 pb-4 text-papel">
-          {galleryIntro.title}
-        </h2>
+        <div className="mb-8 flex flex-col justify-between gap-2 border-b-2 border-papel pb-2 sm:flex-row sm:items-end">
+          <h2 className="font-display text-headline-lg uppercase text-papel">
+            {galleryIntro.title}
+          </h2>
+        </div>
 
-        <div className="parallax-strip mt-8 flex gap-1 overflow-x-auto sm:hidden">
+        <div className="parallax-strip flex gap-4 overflow-x-auto sm:hidden">
           {tiles.map((_, index) => (
-            <PlaceholderPhoto
-              key={index}
-              className="aspect-[4/3] w-64 shrink-0"
-            />
+            <div key={index} className="h-64 w-64 shrink-0 overflow-hidden">
+              <PlaceholderPhoto className="h-full w-full transition-transform duration-300 hover:scale-[1.02]" />
+            </div>
           ))}
         </div>
 
-        <div className="parallax-strip mt-8 hidden grid-cols-3 gap-1 sm:grid">
+        <div className="parallax-strip hidden grid-cols-2 gap-4 sm:grid lg:grid-cols-3">
           {tiles.map((_, index) => (
-            <PlaceholderPhoto
+            <div
               key={index}
-              className={
-                index === 0
-                  ? "col-span-2 aspect-[5/2]"
-                  : index === 1
-                    ? "aspect-[5/4]"
-                    : "aspect-[3/2]"
-              }
-            />
+              className={`h-64 overflow-hidden lg:h-80 ${index === 0 ? "lg:col-span-2" : ""}`}
+            >
+              <PlaceholderPhoto className="h-full w-full transition-transform duration-300 hover:scale-[1.02]" />
+            </div>
           ))}
         </div>
       </Container>
