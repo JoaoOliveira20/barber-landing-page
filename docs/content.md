@@ -77,5 +77,6 @@ Nota abaixo da tabela: "Pagamento em dinheiro ou Pix"
 
 - "Barbearia do Kelvin — Corte clássico, navalha afiada e tradição de
   bairro no coração do Pará."
-- Instagram: @barbeariadokelvin
+- Instagram: link genérico para instagram.com (sem handle — o @barbeariadokelvin
+  bate com uma conta real de outra barbearia, então não deve ser usado)
 - Aviso obrigatório: "Projeto demonstrativo — Barbearia fictícia."

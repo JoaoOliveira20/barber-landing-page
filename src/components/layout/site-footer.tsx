@@ -47,7 +47,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="text-papel/70 transition-colors hover:text-vermelho"
               >
-                Instagram: @barbeariadokelvin
+                Instagram
               </a>
               <span className="text-papel/70">{address.neighborhood}</span>
             </div>

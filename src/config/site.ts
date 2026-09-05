@@ -44,7 +44,7 @@ export const businessHours = [
 ] as const;
 
 export const socialLinks = {
-  instagram: "https://www.instagram.com/barbeariadokelvin",
+  instagram: "https://www.instagram.com",
 } as const;
 
 export const legalNotice = "Projeto demonstrativo — Barbearia fictícia.";
