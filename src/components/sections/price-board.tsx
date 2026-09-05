@@ -8,48 +8,35 @@ function PriceRow({ service }: { service: Service }) {
     service.featured ? "bg-papel-destaque shadow-hard-3" : "bg-papel shadow-hard-2",
   ].join(" ");
 
-  const content = (
-    <div className="flex items-baseline justify-between gap-3">
-      <div className="min-w-0 pr-2">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="font-body text-title-md uppercase text-carvao group-hover:text-papel">
-            {service.name}
-          </span>
-          {service.featured ? (
-            <span className="border border-carvao bg-tinta px-2 py-0.5 font-body text-label-sm uppercase text-papel">
-              Mais pedido
+  return (
+    <a href={service.whatsappUrl} target="_blank" rel="noopener noreferrer" className={rowClasses}>
+      <div className="flex items-baseline justify-between gap-3">
+        <div className="min-w-0 pr-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="font-body text-title-md uppercase text-carvao group-hover:text-papel">
+              {service.name}
             </span>
-          ) : null}
+            {service.featured ? (
+              <span className="border border-carvao bg-tinta px-2 py-0.5 font-body text-label-sm uppercase text-papel">
+                Mais pedido
+              </span>
+            ) : null}
+          </div>
+          <p className="mt-1 font-body text-body-md text-carvao/70 group-hover:text-papel/70">
+            {service.description}
+          </p>
         </div>
-        <p className="mt-1 font-body text-body-md text-carvao/70 group-hover:text-papel/70">
-          {service.description}
-        </p>
+        <div className="flex shrink-0 items-center gap-2">
+          <span className="hidden font-body text-carvao/50 tracking-widest group-hover:text-papel/50 sm:inline">
+            ...............
+          </span>
+          <span className="font-display text-price-display text-carvao group-hover:text-papel">
+            {service.price}
+          </span>
+        </div>
       </div>
-      <div className="flex shrink-0 items-center gap-2">
-        <span className="hidden font-body text-carvao/50 tracking-widest group-hover:text-papel/50 sm:inline">
-          ...............
-        </span>
-        <span className="font-display text-price-display text-carvao group-hover:text-papel">
-          {service.price}
-        </span>
-      </div>
-    </div>
+    </a>
   );
-
-  if (service.whatsappUrl) {
-    return (
-      <a
-        href={service.whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={rowClasses}
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return <div className={rowClasses}>{content}</div>;
 }
 
 export function PriceBoard() {

@@ -35,7 +35,7 @@ export type Service = Readonly<{
   description: string;
   price: string;
   featured?: boolean;
-  whatsappUrl?: string;
+  whatsappUrl: string;
 }>;
 
 export const services: readonly Service[] = [
@@ -64,11 +64,17 @@ export const services: readonly Service[] = [
     name: "Acabamento / Pezinho",
     description: "Contorno, nuca limpa e alinhamento",
     price: "R$ 15",
+    whatsappUrl: buildWhatsappUrl(
+      "Olá, gostaria de agendar um Acabamento / Pezinho",
+    ),
   },
   {
     name: "Sobrancelha na navalha",
     description: "Alinhamento e limpeza rápida",
     price: "R$ 10",
+    whatsappUrl: buildWhatsappUrl(
+      "Olá, gostaria de agendar uma Sobrancelha na navalha",
+    ),
   },
 ];
 

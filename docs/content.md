@@ -31,8 +31,8 @@ placeholder, trocar pelo número real antes de publicar.
 | Corte masculino | Tesoura, máquina e alinhamento clássico | R$ 30 | "gostaria de agendar um Corte masculino" |
 | Barba na navalha | Toalha quente, navalhete e pós-barba artesanal | R$ 25 | "gostaria de agendar uma Barba na navalha" |
 | Corte + Barba — *mais pedido* | O combo completo do sábado | R$ 50 | "gostaria de agendar um Combo Corte + Barba" |
-| Acabamento / Pezinho | Contorno, nuca limpa e alinhamento | R$ 15 | — |
-| Sobrancelha na navalha | Alinhamento e limpeza rápida | R$ 10 | — |
+| Acabamento / Pezinho | Contorno, nuca limpa e alinhamento | R$ 15 | "gostaria de agendar um Acabamento / Pezinho" |
+| Sobrancelha na navalha | Alinhamento e limpeza rápida | R$ 10 | "gostaria de agendar uma Sobrancelha na navalha" |
 
 Nota abaixo da tabela: "Pagamento em dinheiro ou Pix"
 
