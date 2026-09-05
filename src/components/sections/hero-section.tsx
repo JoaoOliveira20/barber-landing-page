@@ -5,7 +5,7 @@ import { heroContent } from "@/config/content";
 export function HeroSection() {
   return (
     <section className="section pt-12 lg:pt-20">
-      <div className="container-hero grid items-stretch gap-12 lg:grid-cols-2 lg:gap-10">
+      <div className="hero-grid container-hero grid items-stretch gap-12 lg:gap-10">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-3.5 w-5 flex-col overflow-hidden">
@@ -61,7 +61,7 @@ export function HeroSection() {
               alt="Cliente sendo atendido na Barbearia do Kelvin"
               fill
               priority
-              sizes="(min-width: 1024px) 45vw, 100vw"
+              sizes="(min-width: 1600px) 45vw, (min-width: 1024px) 38vw, 100vw"
               className="parallax-photo object-cover"
             />
           </div>
