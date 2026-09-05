@@ -10,7 +10,7 @@
 
   --mobile-whatsapp-bar-height: 56px;
   --section-space: 72px;
-  --text-size-hero: clamp(44px, 2.1vw + 36px, 96px);
+  --text-size-hero: clamp(44px, 6.2vw + 21px, 120px);
   --text-size-section-title: clamp(32px, 4vw, 48px);
   --text-size-body: clamp(17px, 1.2vw, 18px);
 }
