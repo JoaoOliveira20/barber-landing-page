@@ -125,14 +125,14 @@ export const barbers: readonly Barber[] = [
     name: "Kelvin",
     quote:
       "Corte clássico, barba na navalha e conversa boa. Aqui a gente cuida da sua aparência com o respeito que você merece.",
-    photo: "/images/barber-kelvin.png",
+    photo: "/images/barber-kelvin.jpg",
     whatsappUrl: buildWhatsappUrl("Olá Kelvin, gostaria de agendar um horário"),
   },
   {
     name: "Rafael",
     quote:
       "Do degradê navalhado ao corte tradicional, sempre no detalhe milimétrico e respeitando a textura do seu cabelo.",
-    photo: "/images/barber-rafael.png",
+    photo: "/images/barber-rafael.jpg",
     whatsappUrl: buildWhatsappUrl("Olá Rafael, gostaria de agendar um horário"),
   },
 ];
@@ -141,7 +141,25 @@ export const galleryIntro = {
   title: "O dia a dia no centro",
 };
 
-export const galleryPlaceholderCount = 5;
+export type GalleryPhoto = Readonly<{
+  src: string;
+  alt: string;
+}>;
+
+export const galleryPhotos: readonly GalleryPhoto[] = [
+  {
+    src: "/images/gallery-loyal-client.jpg",
+    alt: "Cliente sendo atendido durante o corte na Barbearia do Kelvin",
+  },
+  {
+    src: "/images/gallery-straight-razor.jpg",
+    alt: "Acabamento na navalha no pescoço do cliente",
+  },
+  {
+    src: "/images/gallery-haircut-detail.jpg",
+    alt: "Detalhe do acabamento do corte com máquina",
+  },
+];
 
 export type Testimonial = Readonly<{
   name: string;

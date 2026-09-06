@@ -57,7 +57,7 @@ export function HeroSection() {
         <div className="relative mt-4 lg:col-span-5 lg:mt-0">
           <div className="relative h-[360px] overflow-hidden lg:h-[440px]">
             <Image
-              src="/images/hero-barbearia.png"
+              src="/images/hero-barbearia.jpg"
               alt="Cliente sendo atendido na Barbearia do Kelvin"
               fill
               priority

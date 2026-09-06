@@ -1,8 +1,7 @@
-import { Container } from "@/components/layout/container";
-import { PlaceholderPhoto } from "@/components/ui/placeholder-photo";
-import { galleryIntro, galleryPlaceholderCount } from "@/config/content";
+import Image from "next/image";
 
-const tiles = Array.from({ length: galleryPlaceholderCount });
+import { Container } from "@/components/layout/container";
+import { galleryIntro, galleryPhotos } from "@/config/content";
 
 export function GallerySection() {
   return (
@@ -15,20 +14,29 @@ export function GallerySection() {
         </div>
 
         <div className="parallax-strip flex gap-4 overflow-x-auto sm:hidden">
-          {tiles.map((_, index) => (
-            <div key={index} className="h-64 w-64 shrink-0 overflow-hidden">
-              <PlaceholderPhoto className="h-full w-full transition-transform duration-300 hover:scale-[1.02]" />
+          {galleryPhotos.map((photo) => (
+            <div key={photo.src} className="relative h-64 w-64 shrink-0 overflow-hidden">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="256px"
+                className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
             </div>
           ))}
         </div>
 
         <div className="parallax-strip hidden grid-cols-2 gap-4 sm:grid lg:grid-cols-3">
-          {tiles.map((_, index) => (
-            <div
-              key={index}
-              className={`h-64 overflow-hidden lg:h-80 ${index === 0 ? "lg:col-span-2" : ""}`}
-            >
-              <PlaceholderPhoto className="h-full w-full transition-transform duration-300 hover:scale-[1.02]" />
+          {galleryPhotos.map((photo) => (
+            <div key={photo.src} className="relative h-64 overflow-hidden lg:h-80">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(min-width: 1024px) 33vw, 50vw"
+                className="object-cover transition-transform duration-300 hover:scale-[1.02]"
+              />
             </div>
           ))}
         </div>

@@ -103,9 +103,15 @@ fica `[~]` com uma linha dizendo o que falta.
 
 - Número de WhatsApp é placeholder (`5591999999999`) — trocar antes de
   publicar.
-- Fotos reais de galeria e mapa ainda não existem — usando placeholder
-  com aspect-ratio fixo até serem fornecidas. Barbeiros e hero já usam
-  fotos reais (`references/photos/`), copiadas para `public/images/`.
+- Fotos reais de hero, barbeiros e galeria vieram de
+  `C:\Users\palad\OneDrive\Imagens\barbearia` e estão em
+  `public/images/` (`hero-barbearia.jpg`, `barber-kelvin.jpg`,
+  `barber-rafael.jpg`, `gallery-loyal-client.jpg`,
+  `gallery-straight-razor.jpg`, `gallery-haircut-detail.jpg`). A
+  galeria ficou com 3 fotos reais em grade única (sem bento de 5 como
+  no HTML de referência, por não haver fotos suficientes) —
+  `PlaceholderPhoto` foi removido por ficar sem uso. Foto do mapa
+  continua sem substituto (a seção usa um SVG de grade, não uma foto).
 - O rodapé do print mostra "Sábado: 08h às 18h", divergindo de
   `docs/content.md` e do resto do site (08h às 17h). Segui
   `content.md` no rodapé (dado factual, não detalhe visual) — sinalizar
